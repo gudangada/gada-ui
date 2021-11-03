@@ -102,3 +102,6 @@ temp/
 
 # Jetbrains
 .idea/*
+
+# Rollup bundle output folder
+/lib

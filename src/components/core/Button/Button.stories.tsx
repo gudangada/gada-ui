@@ -9,7 +9,6 @@ export default {
 
 export const Button: React.VFC = () => {
   return (
-          <ButtonUI onClick={() => alert("Clicked")}>Primary</ButtonUI>
-          
+    <ButtonUI onClick={() => alert("Clicked")}>Primary</ButtonUI>      
   );
 };
