@@ -5,11 +5,13 @@
   "main": "src/index.js",
   "module": "src/index.esm.js",
   "types": "src/index.d.ts",
-  "repository": "https://github.com/gudangada/gada-ui.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gudangada/gada-ui.git"
+  },
   "author": "Khubaib",
   "license": "MIT",
-  "private": true,
-  "dependencies": {},
+  "private": false,
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -38,5 +40,12 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "rollup -c"
+  },
+  "bugs": {
+    "url": "https://github.com/gudangada/gada-ui/issues"
+  },
+  "homepage": "https://github.com/gudangada/gada-ui#readme",
+  "directories": {
+    "lib": "lib"
   }
 }
