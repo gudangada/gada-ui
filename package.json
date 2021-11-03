@@ -1,10 +1,10 @@
 {
   "name": "gada-ui",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Gada Design System",
-  "main": "src/index.js",
-  "module": "src/index.esm.js",
-  "types": "src/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gudangada/gada-ui.git"
@@ -23,6 +23,8 @@
     "@types/react": "^17.0.33",
     "babel-loader": "^8.2.3",
     "postcss": "^8.3.11",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "rollup": "^2.59.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
@@ -33,14 +35,20 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@mui/material": "^5.0.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">=17.0.2",
+    "react-dom": ">=17.0.2"
   },
   "scripts": {
+    "prepublishOnly": "yarn build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c"
+    "build": "rimraf lib && tsc && rollup -c rollup.config.js"
   },
+  "keywords": [
+    "stroybook",
+    "react",
+    "typescript"
+  ],
   "bugs": {
     "url": "https://github.com/gudangada/gada-ui/issues"
   },
