@@ -105,3 +105,6 @@ temp/
 
 # Rollup bundle output folder
 /lib
+
+# storybook build folder
+storybook-static

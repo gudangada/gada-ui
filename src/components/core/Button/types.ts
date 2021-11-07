@@ -1,3 +1,3 @@
-export interface iButtonProps {
-  onClick: VoidFunction;
-}
+import { ButtonProps } from "@mui/material";
+
+export interface iButtonProps extends ButtonProps {}
