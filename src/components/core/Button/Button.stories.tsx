@@ -2,21 +2,30 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import ButtonUI from "./Button";
 import { iButtonProps } from "./types";
-
-const ThemedButton = ButtonUI;
+import { SpeedDialIcon } from "@mui/material";
 
 export default {
-  title: "Components/Button",
-  component: ThemedButton,
+  title: "Components/Core",
+  component: ButtonUI,
 } as Meta;
 
 //👇 We create a “template” of how args map to rendering
-const Template: Story<iButtonProps> = (args) => <ThemedButton {...args} />;
+const Template: Story<iButtonProps> = (args) => <ButtonUI {...args} />;
 
 //👇 Each story then reuses that template
-export const Primary = Template.bind({});
-Primary.args = {
-  variant: "contained",
+export const Button = Template.bind({});
+Button.args = {
+  variant: "primary",
   color: "primary",
-  children: "Primary",
+  size: "large",
+  children: "Button Text",
+};
+
+export const CircularButton = Template.bind({});
+CircularButton.args = {
+  variant: "circular",
+  color: "primary",
+  size: "large",
+  disabled: false,
+  children: <SpeedDialIcon />,
 };

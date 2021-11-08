@@ -1,16 +1,22 @@
 import * as React from "react";
 import { iButtonProps } from "./types";
 import { Button as MuiButton } from "@mui/material";
-import { useStyles } from "./styles";
-import { useTheme } from "@mui/styles";
+import { ButtonPropsMap } from "./constants";
 
-const Button: React.FC<iButtonProps> = ({ children, ...props }) => {
-  const classes = useStyles();
-  const theme = useTheme();
-  console.log(theme);
+const Button: React.FC<iButtonProps> = ({
+  children,
+  variant = "primary",
+  color = "primary",
+  ...props
+}) => {
+  const variantColorMap = ButtonPropsMap[variant][color];
 
   return (
-    <MuiButton className={classes.button} {...props}>
+    <MuiButton
+      variant={variantColorMap.variant}
+      color={variantColorMap.color}
+      {...props}
+    >
       {children}
     </MuiButton>
   );
