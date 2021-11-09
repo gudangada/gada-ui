@@ -1,10 +1,12 @@
-import { ThemeOptions, CSSInterpolation } from "@mui/material";
+import { ThemeOptions } from "@mui/material";
 import { pxToRem } from "./utils";
 import { palette } from "./palette";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
+    /* Declare new custom variants here */
     circular: true;
+    fab: true;
   }
 }
 
@@ -20,6 +22,17 @@ export const components: ThemeOptions["components"] = {
         padding: `${pxToRem(10)} ${pxToRem(24)}`,
         color: palette.interface.teal["500"],
         borderRadius: pxToRem(8),
+        boxShadow:
+          "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+
+        "&:hover": {
+          boxShadow:
+            "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+        },
+
+        "&:disabled": {
+          boxShadow: "none",
+        },
       },
       startIcon: {
         marginRight: 8,
@@ -49,6 +62,7 @@ export const components: ThemeOptions["components"] = {
       outlined: {
         borderColor: palette.interface.teal["500"],
         color: palette.interface.teal["500"],
+
         "&:hover": {
           borderColor: palette.interface.teal["700"],
           color: palette.interface.teal["700"],
@@ -65,12 +79,22 @@ export const components: ThemeOptions["components"] = {
       },
       text: {
         color: palette.interface.teal["500"],
+        boxShadow: "none",
+
+        "&:hover": {
+          boxShadow: "none",
+        },
+
         "&$disabled": {
           color: palette.interface.black["300"],
         },
       },
     },
     variants: [
+      /* 
+        Variant specific style should be added here
+        Note: The styles have priority from bottom to top (bottom being the highest priority)
+      */
       {
         props: { variant: "contained", color: "error" },
         style: {
@@ -165,6 +189,51 @@ export const components: ThemeOptions["components"] = {
           },
         },
       },
+      {
+        props: { variant: "fab" },
+        style: {
+          alignItems: "center",
+          backgroundColor: palette.interface.teal["500"],
+          borderRadius: pxToRem(100),
+
+          "& >*": {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            color: `${palette.interface.white} !important`,
+          },
+
+          "&:hover": {
+            backgroundColor: palette.interface.teal["700"],
+          },
+          "&:active": {
+            backgroundColor: palette.interface.teal["900"],
+          },
+        },
+      },
+      {
+        props: { variant: "fab", color: "error" },
+        style: {
+          backgroundColor: palette.interface.red["500"],
+
+          "&:hover": {
+            backgroundColor: palette.interface.red["700"],
+          },
+          "&:active": {
+            backgroundColor: palette.interface.red["900"],
+          },
+        },
+      },
+      {
+        props: { variant: "fab", disabled: true },
+        style: {
+          backgroundColor: palette.interface.black["200"],
+          "& >*": {
+            color: `${palette.interface.black["300"]} !important`,
+          },
+        },
+      },
+
       /* Sizes */
       {
         props: { size: "small" },

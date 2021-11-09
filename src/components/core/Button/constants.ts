@@ -49,4 +49,14 @@ export const ButtonPropsMap: {
       color: "error",
     },
   },
+  fab: {
+    primary: {
+      variant: "fab",
+      color: "primary",
+    },
+    destructive: {
+      variant: "fab",
+      color: "error",
+    },
+  },
 };
