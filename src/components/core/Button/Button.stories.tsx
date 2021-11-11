@@ -225,7 +225,7 @@ const Template: Story<iButtonProps> = ({
 
 //👇 Each story then reuses that template
 export const Button = Template.bind({});
-Button.parameters = { controls: { include: [] } };
+Button.parameters = { controls: { include: ["onClick"] } };
 Button.args = {
   color: "primary",
   onClick: () => alert("Clicked"),
