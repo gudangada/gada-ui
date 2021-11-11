@@ -20,6 +20,7 @@ const Button: React.FC<iButtonProps> = ({
     <MuiButton
       variant={variantColorMap.variant}
       color={variantColorMap.color}
+      size={size}
       {...props}
     >
       {text ? (
