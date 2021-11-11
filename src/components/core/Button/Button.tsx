@@ -8,6 +8,7 @@ const Button: React.FC<iButtonProps> = ({
   children,
   variant = "primary",
   color = "primary",
+  size = "small",
   text,
   textProps,
   ...props
@@ -23,7 +24,7 @@ const Button: React.FC<iButtonProps> = ({
     >
       {text ? (
         <Typography
-          variant={props.size === "large" ? "button" : "buttonSmall"}
+          variant={size === "large" ? "button" : "buttonSmall"}
           {...textProps}
           color={
             variantColorMap.color === "error"

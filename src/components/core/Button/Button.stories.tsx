@@ -103,7 +103,7 @@ const Template: Story<iButtonProps> = ({
 
       <Stack spacing={1} width={size === "large" ? "100%" : "auto"}>
         <Typography variant="h4" color="GrayText">
-          Outlined
+          Destructive
         </Typography>
         <Stack
           direction={size === "large" ? "column" : "row"}
