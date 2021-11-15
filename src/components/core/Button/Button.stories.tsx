@@ -39,17 +39,17 @@ const Template: Story<iButtonProps> = ({
           label="Button Size"
           onChange={(evt) => setSize(evt.target.value as iButtonProps["size"])}
         >
+          <MenuItem value={"default"}>Default</MenuItem>
           <MenuItem value={"small"}>Small</MenuItem>
-          <MenuItem value={"large"}>Large</MenuItem>
         </Select>
       </FormControl>
 
-      <Stack spacing={1} width={size === "large" ? "100%" : "auto"}>
+      <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
         <Typography variant="h4" color="GrayText">
           Primary
         </Typography>
         <Stack
-          direction={size === "large" ? "column" : "row"}
+          direction={size === "default" ? "column" : "row"}
           alignItems="center"
           spacing={2}
         >
@@ -101,12 +101,12 @@ const Template: Story<iButtonProps> = ({
         </Stack>
       </Stack>
 
-      <Stack spacing={1} width={size === "large" ? "100%" : "auto"}>
+      <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
         <Typography variant="h4" color="GrayText">
           Destructive
         </Typography>
         <Stack
-          direction={size === "large" ? "column" : "row"}
+          direction={size === "default" ? "column" : "row"}
           alignItems="center"
           spacing={2}
         >
@@ -158,12 +158,12 @@ const Template: Story<iButtonProps> = ({
         </Stack>
       </Stack>
 
-      <Stack spacing={1} width={size === "large" ? "100%" : "auto"}>
+      <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
         <Typography variant="h4" color="GrayText">
           Disabled
         </Typography>
         <Stack
-          direction={size === "large" ? "column" : "row"}
+          direction={size === "default" ? "column" : "row"}
           alignItems="center"
           spacing={2}
         >
@@ -225,7 +225,7 @@ const Template: Story<iButtonProps> = ({
 
 //👇 Each story then reuses that template
 export const Button = Template.bind({});
-Button.parameters = { controls: { include: ["onClick"] } };
+Button.parameters = { controls: { include: ["onClick", "showIcon"] } };
 Button.args = {
   color: "primary",
   onClick: () => alert("Clicked"),

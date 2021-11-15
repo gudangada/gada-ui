@@ -8,24 +8,25 @@ const Button: React.FC<iButtonProps> = ({
   children,
   variant = "primary",
   color = "primary",
-  size = "small",
+  size = "default",
   text,
   textProps,
   ...props
 }) => {
   const { palette } = useTheme<AppTheme>();
   const variantColorMap = ButtonPropsMap[variant][color];
+  const buttonSize = size === "default" ? "large" : size;
 
   return (
     <MuiButton
       variant={variantColorMap.variant}
       color={variantColorMap.color}
-      size={size}
+      size={buttonSize}
       {...props}
     >
       {text ? (
         <Typography
-          variant={size === "large" ? "button" : "buttonSmall"}
+          variant={buttonSize === "large" ? "button" : "buttonSmall"}
           {...textProps}
           color={
             variantColorMap.color === "error"
