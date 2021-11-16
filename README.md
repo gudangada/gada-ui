@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c07cdd6a-aa15-4aec-b223-2733e366cb84/deploy-status)](https://app.netlify.com/sites/gada-design-system/deploys)
+
 # Intro
 A component library based on Gada Design System
 
