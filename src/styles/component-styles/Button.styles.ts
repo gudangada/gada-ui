@@ -1,6 +1,6 @@
 import { ThemeOptions } from "@mui/material";
-import { pxToRem } from "./utils";
-import { palette } from "./palette";
+import { pxToRem } from "../utils";
+import { palette } from "../palette";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
@@ -10,7 +10,7 @@ declare module "@mui/material/Button" {
   }
 }
 
-export const components: ThemeOptions["components"] = {
+export const Button: ThemeOptions["components"] = {
   MuiButton: {
     defaultProps: {
       disableRipple: true,
