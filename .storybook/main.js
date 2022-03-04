@@ -3,7 +3,12 @@ const toPath = (filePath) => path.join(process.cwd(), filePath);
 
 module.exports = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  addons: [
+    "@storybook/addon-essentials",
+    "@storybook/addon-docs",
+    "@storybook/addon-actions",
+    "@storybook/addon-links",
+  ],
   webpackFinal: async (config) => {
     // styles
     config.module.rules.push({
@@ -32,8 +37,8 @@ module.exports = {
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
-          "@emotion/core": toPath("node_modules/@emotion/react"),
-          "emotion-theming": toPath("node_modules/@emotion/react"),
+          "@emotion/core": toPath("../../node_modules/@emotion/react"),
+          "emotion-theming": toPath("../../node_modules/@emotion/react"),
         },
       },
     };

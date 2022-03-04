@@ -1,6 +1,6 @@
 import { ThemeOptions } from "@mui/material";
 import { pxToRem } from "../utils";
-import { palette } from "../palette";
+import { Palette } from "./Palette.styles";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
@@ -20,7 +20,6 @@ export const Button: ThemeOptions["components"] = {
         fontFamily: "Inter,sans-serif",
         minHeight: 38,
         padding: `${pxToRem(10)} ${pxToRem(24)}`,
-        color: palette.interface.teal["500"],
         borderRadius: pxToRem(8),
         boxShadow: "none",
 
@@ -39,52 +38,44 @@ export const Button: ThemeOptions["components"] = {
         borderWidth: 1,
         borderColor: "transparent",
         borderStyle: "solid",
-        backgroundColor: palette.interface.teal["500"],
-        color: palette.interface.white,
+        backgroundColor: Palette.interface.teal["500"],
+        color: Palette.interface.white,
+
         "&:hover": {
-          backgroundColor: palette.interface.teal["700"],
+          backgroundColor: Palette.interface.teal["700"],
         },
         "&:active": {
-          backgroundColor: palette.interface.teal["900"],
-        },
-        "&$disabled": {
-          backgroundColor: palette.interface.black["200"],
-          color: palette.interface.black["300"],
+          backgroundColor: Palette.interface.teal["900"],
         },
         "@media (hover: none)": {
           "&:hover": {
-            backgroundColor: `${palette.interface.teal["700"]} !important`,
+            backgroundColor: `${Palette.interface.teal["700"]} !important`,
           },
         },
       },
       outlined: {
-        borderColor: palette.interface.teal["500"],
-        color: palette.interface.teal["500"],
+        borderColor: Palette.interface.teal["500"],
+        color: Palette.interface.teal["500"],
 
         "&:hover": {
-          borderColor: palette.interface.teal["700"],
-          color: palette.interface.teal["700"],
+          borderColor: Palette.interface.teal["700"],
+          color: Palette.interface.teal["700"],
         },
         "&:active": {
-          backgroundColor: palette.interface.teal["50"],
-          borderColor: palette.interface.teal["900"],
-          color: palette.interface.teal["900"],
-        },
-        "&$disabled": {
-          borderColor: palette.interface.black["200"],
-          color: palette.interface.black["300"],
+          backgroundColor: Palette.interface.teal["50"],
+          borderColor: Palette.interface.teal["900"],
+          color: Palette.interface.teal["900"],
         },
       },
       text: {
-        color: palette.interface.teal["500"],
         boxShadow: "none",
+
+        "& .MuiTypography-root": {
+          color: Palette.interface.teal["500"],
+        },
 
         "&:hover": {
           boxShadow: "none",
-        },
-
-        "&$disabled": {
-          color: palette.interface.black["300"],
         },
       },
     },
@@ -96,21 +87,21 @@ export const Button: ThemeOptions["components"] = {
       {
         props: { variant: "contained", color: "error" },
         style: {
-          backgroundColor: palette.interface.red["500"],
-          color: palette.interface.white,
+          backgroundColor: Palette.interface.red["500"],
+
+          "&>*": {
+            color: Palette.interface.white,
+          },
+
           "&:hover": {
-            backgroundColor: palette.interface.red["700"],
+            backgroundColor: Palette.interface.red["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.red["900"],
-          },
-          "&$disabled": {
-            backgroundColor: palette.interface.black["200"],
-            color: palette.interface.black["300"],
+            backgroundColor: Palette.interface.red["900"],
           },
           "@media (hover: none)": {
             "&:hover": {
-              backgroundColor: `${palette.interface.red["700"]} !important`,
+              backgroundColor: `${Palette.interface.red["700"]} !important`,
             },
           },
         },
@@ -118,25 +109,27 @@ export const Button: ThemeOptions["components"] = {
       {
         props: { variant: "outlined", color: "error" },
         style: {
-          borderColor: palette.interface.red["500"],
-          color: palette.interface.red["500"],
+          borderColor: Palette.interface.red["500"],
+          color: Palette.interface.red["500"],
+
           "&:hover": {
-            borderColor: palette.interface.red["700"],
-            color: palette.interface.red["700"],
+            borderColor: Palette.interface.red["700"],
+            color: Palette.interface.red["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.red["50"],
-            borderColor: palette.interface.red["900"],
-            color: palette.interface.red["900"],
+            backgroundColor: Palette.interface.red["50"],
+            borderColor: Palette.interface.red["900"],
+            color: Palette.interface.red["900"],
           },
         },
       },
       {
         props: { variant: "text", color: "error" },
         style: {
-          color: palette.interface.red["500"],
+          color: Palette.interface.red["500"],
+
           "&:active": {
-            color: palette.interface.red["900"],
+            color: Palette.interface.red["900"],
           },
         },
       },
@@ -151,39 +144,30 @@ export const Button: ThemeOptions["components"] = {
           maxHeight: 48,
           padding: 12,
           borderRadius: "50%",
-          backgroundColor: palette.interface.teal["500"],
+          backgroundColor: Palette.interface.teal["500"],
           overflow: "hidden",
 
           "& >*": {
-            color: palette.interface.white,
+            color: Palette.interface.white,
           },
 
           "&:hover": {
-            backgroundColor: palette.interface.teal["700"],
+            backgroundColor: Palette.interface.teal["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.teal["900"],
+            backgroundColor: Palette.interface.teal["900"],
           },
         },
       },
       {
         props: { variant: "circular", color: "error" },
         style: {
-          backgroundColor: palette.interface.red["500"],
+          backgroundColor: Palette.interface.red["500"],
           "&:hover": {
-            backgroundColor: palette.interface.red["700"],
+            backgroundColor: Palette.interface.red["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.red["900"],
-          },
-        },
-      },
-      {
-        props: { variant: "circular", disabled: true },
-        style: {
-          backgroundColor: palette.interface.black["200"],
-          "& >*": {
-            color: palette.interface.black["300"],
+            backgroundColor: Palette.interface.red["900"],
           },
         },
       },
@@ -191,43 +175,63 @@ export const Button: ThemeOptions["components"] = {
         props: { variant: "fab" },
         style: {
           alignItems: "center",
-          backgroundColor: palette.interface.teal["500"],
+          backgroundColor: Palette.interface.teal["500"],
           borderRadius: pxToRem(100),
 
           "& >*": {
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            color: `${palette.interface.white} !important`,
+            color: `${Palette.interface.white} !important`,
+          },
+
+          "& .MuiTypography-root": {
+            color: `${Palette.interface.white} !important`,
           },
 
           "&:hover": {
-            backgroundColor: palette.interface.teal["700"],
+            backgroundColor: Palette.interface.teal["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.teal["900"],
+            backgroundColor: Palette.interface.teal["900"],
           },
         },
       },
       {
         props: { variant: "fab", color: "error" },
         style: {
-          backgroundColor: palette.interface.red["500"],
+          backgroundColor: Palette.interface.red["500"],
 
           "&:hover": {
-            backgroundColor: palette.interface.red["700"],
+            backgroundColor: Palette.interface.red["700"],
           },
           "&:active": {
-            backgroundColor: palette.interface.red["900"],
+            backgroundColor: Palette.interface.red["900"],
           },
         },
       },
       {
-        props: { variant: "fab", disabled: true },
+        props: { disabled: true },
         style: {
-          backgroundColor: palette.interface.black["200"],
+          backgroundColor: Palette.interface.black["200"],
+          borderColor: `${Palette.interface.black["200"]} !important`,
+
+          "&>*": {
+            color: `${Palette.interface.black["300"]} !important`,
+          },
+          "& .MuiTypography-root": {
+            color: `${Palette.interface.black["300"]} !important`,
+          },
+        },
+      },
+      {
+        props: { variant: "text", disabled: true },
+        style: {
+          backgroundColor: "transparent",
+          borderColor: "transparent",
+
           "& >*": {
-            color: `${palette.interface.black["300"]} !important`,
+            color: `${Palette.interface.black["300"]} !important`,
           },
         },
       },

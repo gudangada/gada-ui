@@ -1,6 +1,5 @@
-import React from "react";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-import { theme } from "../src/styles";
+import { ThemeProvider } from "../src";
+import "../src/styles/global.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -10,13 +9,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  layout: "centered",
 };
 
 export const decorators = [
-  (Story) => (
-    <MuiThemeProvider theme={theme}>
-      <Story />
-    </MuiThemeProvider>
+  (Story, context) => (
+    <ThemeProvider>
+      <Story {...context} />
+    </ThemeProvider>
   ),
 ];

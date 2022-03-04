@@ -1,11 +1,23 @@
 import { createTheme } from "@mui/material/styles";
-import { palette } from "./palette";
-import { typography } from "./typography";
-import ComponentStyles from "./component-styles";
+import ComponentStyles, {
+  Palette,
+  Typography,
+  zIndex,
+} from "./component-styles";
+import "@emotion/react";
 
-const themeOptions = { palette, typography, components: ComponentStyles };
+export const themeOptions = {
+  palette: Palette,
+  typography: Typography,
+  components: ComponentStyles,
+};
 
-export const theme = createTheme(themeOptions);
+const theme = createTheme(themeOptions);
 export type AppTheme = typeof themeOptions;
 
+declare module "@emotion/react" {
+  export interface Theme extends AppTheme {}
+}
+
+export { zIndex, theme };
 export default theme;

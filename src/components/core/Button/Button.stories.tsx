@@ -25,7 +25,7 @@ const Template: Story<iButtonProps> = ({
   style,
   ...props
 }) => {
-  const styles: React.CSSProperties = { flex: "0 0 content" };
+  const styles: React.CSSProperties = {};
   const [size, setSize] = React.useState<iButtonProps["size"]>("small");
 
   return (
@@ -45,7 +45,7 @@ const Template: Story<iButtonProps> = ({
       </FormControl>
 
       <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
-        <Typography variant="h4" color="GrayText">
+        <Typography variant="heading4SemiBold" color="GrayText">
           Primary
         </Typography>
         <Stack
@@ -57,6 +57,7 @@ const Template: Story<iButtonProps> = ({
             variant="primary"
             color="primary"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -66,6 +67,7 @@ const Template: Story<iButtonProps> = ({
             variant="outlined"
             color="primary"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -75,6 +77,7 @@ const Template: Story<iButtonProps> = ({
             variant="text"
             color="primary"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -84,6 +87,7 @@ const Template: Story<iButtonProps> = ({
             variant="circular"
             color="primary"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -95,6 +99,7 @@ const Template: Story<iButtonProps> = ({
             startIcon={<SpeedDialIcon />}
             text="FAB Text"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           />
@@ -102,7 +107,7 @@ const Template: Story<iButtonProps> = ({
       </Stack>
 
       <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
-        <Typography variant="h4" color="GrayText">
+        <Typography variant="heading4SemiBold" color="GrayText">
           Destructive
         </Typography>
         <Stack
@@ -114,6 +119,7 @@ const Template: Story<iButtonProps> = ({
             variant="primary"
             color="destructive"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -123,6 +129,7 @@ const Template: Story<iButtonProps> = ({
             variant="outlined"
             color="destructive"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -132,6 +139,7 @@ const Template: Story<iButtonProps> = ({
             variant="text"
             color="destructive"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -141,6 +149,7 @@ const Template: Story<iButtonProps> = ({
             variant="circular"
             color="destructive"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -152,6 +161,7 @@ const Template: Story<iButtonProps> = ({
             startIcon={<SpeedDialIcon />}
             text="FAB Text"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           />
@@ -159,7 +169,7 @@ const Template: Story<iButtonProps> = ({
       </Stack>
 
       <Stack spacing={1} width={size === "default" ? "100%" : "auto"}>
-        <Typography variant="h4" color="GrayText">
+        <Typography variant="heading4SemiBold" color="GrayText">
           Disabled
         </Typography>
         <Stack
@@ -172,6 +182,7 @@ const Template: Story<iButtonProps> = ({
             color="primary"
             disabled
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -182,6 +193,7 @@ const Template: Story<iButtonProps> = ({
             color="primary"
             disabled
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -192,6 +204,7 @@ const Template: Story<iButtonProps> = ({
             color="primary"
             disabled
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -202,6 +215,7 @@ const Template: Story<iButtonProps> = ({
             color="primary"
             disabled
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             {...props}
           >
@@ -213,6 +227,7 @@ const Template: Story<iButtonProps> = ({
             startIcon={<SpeedDialIcon />}
             text="FAB Text"
             size={size}
+            fullWidth={size === "default"}
             style={{ ...styles, ...style }}
             disabled
             {...props}
