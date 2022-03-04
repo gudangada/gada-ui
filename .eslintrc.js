@@ -8,6 +8,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -25,7 +26,13 @@ module.exports = {
   },
   rules: {
     indent: "off",
-    "@typescript-eslint/indent": ["error", 2, { SwitchCase: 1 }],
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ],
     "linebreak-style": 0,
     quotes: ["error", "double"],
     semi: ["error", "always"],

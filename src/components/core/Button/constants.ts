@@ -59,4 +59,14 @@ export const ButtonPropsMap: {
       color: "error",
     },
   },
+  "icon-small": {
+    primary: {
+      variant: "text",
+      color: "primary",
+    },
+    destructive: {
+      variant: "text",
+      color: "error",
+    },
+  },
 };

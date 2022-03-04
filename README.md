@@ -1,15 +1,16 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c07cdd6a-aa15-4aec-b223-2733e366cb84/deploy-status)](https://app.netlify.com/sites/gada-design-system/deploys)
 
 # Intro
+
 A component library based on Gada Design System
 
 ## File Organization
 
-* `src/components` : used for all the react components
-  * `/core` : contains all those components that have finalized design on figma
-  * `/lab` : contains all the experimental components that shouldn't be exported with the npm package
-* `src/hocs` : contains generic higher order components 
-* `src/styles` : contains all the stuff related to theming, including tokens for colors, typography and mui component's overrides etc.
+- `src/components` : used for all the react components
+  - `/core` : contains all those components that have finalized design on figma
+  - `/lab` : contains all the experimental components that shouldn't be exported with the npm package
+- `src/hocs` : contains generic higher order components
+- `src/styles` : contains all the stuff related to theming, including tokens for colors, typography and mui component's overrides etc.
 
 ## Branch Structure
 
@@ -25,7 +26,9 @@ The repo has 3 main branches:
 - Use `improve/GUD-ticket-number-feature-to-improve-name` for any improvements
 
 ## How to run
+
 - Run storybook
+
 ```sh
 yarn storybook
 ```
@@ -67,32 +70,42 @@ git checkout -b feature/GUD-ticket-number-feature-name
 ```
 
 ## Publish to NPM
+
 Will update it later
 
 ## Contribution
-* Clone the repo to your local
+
+- Clone the repo to your local
+
 ```sh
 git clone https://github.com/gudangada/gada-ui.git
 ```
-* Checkout `develop` branch
+
+- Checkout `develop` branch
+
 ```sh
 git checkout develop
 ```
-* Install dependencies
+
+- Install dependencies
+
 ```sh
 yarn install
 ```
-* Run the project
+
+- Run the project
+
 ```sh
 yarn storybook
 ```
-* Pick any unimplemented component from [Design System's Figma](https://www.figma.com/file/5yyvvVhEf2a9oDB5RBdhGt/%5BWIP%5D-Design-System?node-id=615%3A3862) project
-* Assign an existing unassigned task to yourself from [Design System - Web](https://linear.app/gudangada/project/design-system-web-497cf010dce4/GUD) project on **linear**, or create a new one if it doesn't exist.
-* Specify the `Estimate` points (1 point being 2 hours) to your ticket
-* Checkout your feature branch (Follow **Conventions for branch name** section's guideline)
-* Implement the feature
-* Create a PR against `develop` branch
-* Post it in the `#design-system-web-trackers` channel on slack
-* Get that PR approved
-* Merge the PR to `develop` (with a meaningful message - can use PR's title)
-* Don't forget to keep updating your linear ticket's status
+
+- Pick any unimplemented component from [Design System's Figma](https://www.figma.com/file/5yyvvVhEf2a9oDB5RBdhGt/%5BWIP%5D-Design-System?node-id=615%3A3862) project
+- Assign an existing unassigned task to yourself from [Design System - Web](https://linear.app/gudangada/project/design-system-web-497cf010dce4/GUD) project on **linear**, or create a new one if it doesn't exist.
+- Specify the `Estimate` points (1 point being 2 hours) to your ticket
+- Checkout your feature branch (Follow **Conventions for branch name** section's guideline)
+- Implement the feature
+- Create a PR against `develop` branch
+- Post it in the `#design-system-web-trackers` channel on slack
+- Get that PR approved
+- Merge the PR to `develop` (with a meaningful message - can use PR's title)
+- Don't forget to keep updating your linear ticket's status

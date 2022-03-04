@@ -1,0 +1,9 @@
+import * as React from "react";
+import { Tabs as MuiTabs } from "@mui/material";
+import { iTabsProps } from "./types";
+
+const Tabs: React.FC<iTabsProps> = (props) => {
+  return <MuiTabs scrollButtons {...props} />;
+};
+
+export default Tabs;
