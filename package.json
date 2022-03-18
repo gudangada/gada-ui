@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "storybook": "start-storybook -s ./src/assets -p 6006",
-    "build-storybook": "build-storybook -s ./src/assets",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "build": "rimraf lib && tsc && rollup -c rollup.config.js",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx} **/*.{ts,tsx} --fix",
     "prettier": "prettier --write src/**/*.{ts,tsx} **/*.{ts,tsx}",
