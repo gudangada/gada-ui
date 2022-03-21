@@ -2,9 +2,8 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import AutoCompleteUI from "./AutoComplete";
 import { iAutoCompleteProps } from "./types";
-import { Col, Row } from "../../layout";
-import { Text } from "../../core";
-import { Chip, TextField } from "@mui/material";
+import { Col } from "../../layout";
+import { Chip } from "@mui/material";
 
 export default {
   title: "Components/Inputs",
@@ -12,19 +11,19 @@ export default {
 } as Meta;
 
 const Template: Story<iAutoCompleteProps<any, any, any, any>> = () => {
+  const [singleValue, setSingleValue] = React.useState<iOption>(top100Films[0]);
   const [value, setValue] = React.useState<iOption[]>([top100Films[0]]);
 
   return (
     <Col spacing={16}>
-      <AutoCompleteUI<iOption, true, false, any>
-        disablePortal
-        multiple
+      <AutoCompleteUI<iOption, false, false, any>
+        multiple={false}
         aria-multiline
-        id="combo-box-demo"
+        id="combo-box-demo-single"
         options={top100Films}
-        value={value}
+        value={singleValue}
         onChange={(_, newValue) => {
-          setValue(newValue as iOption[]);
+          setSingleValue(newValue as iOption);
         }}
         getOptionLabel={(option) => option.label}
         renderTags={(tagValue, getTagProps) =>
@@ -34,11 +33,10 @@ const Template: Story<iAutoCompleteProps<any, any, any, any>> = () => {
         }
         sx={{ width: 300 }}
       />
-      <AutoCompleteUI
-        disablePortal
+      <AutoCompleteUI<iOption, true, false, any>
         multiple
         aria-multiline
-        id="combo-box-demo"
+        id="combo-box-demo-multiple"
         options={top100Films}
         value={value}
         onChange={(_, newValue) => {
