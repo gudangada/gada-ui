@@ -10,6 +10,7 @@ import { FormHelperText } from "../FormHelperText";
 import { StyledAutoCompleteContainer } from "./styles";
 import { Label } from "../Label";
 import { ArrowUpIcon } from "../../../assets";
+import clsx from "clsx";
 
 const AutoComplete = <
   T,
@@ -95,6 +96,10 @@ const AutoComplete = <
             placeholder={placeholder}
             InputProps={{
               ...params.InputProps,
+              className: clsx(
+                params.InputProps.className,
+                props.multiple && "h-full max-h-full"
+              ),
               endAdornment: (
                 <>
                   {loading ? (
