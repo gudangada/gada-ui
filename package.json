@@ -1,6 +1,6 @@
 {
   "name": "@gudangada/design-system",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Gada Design System",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
