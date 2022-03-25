@@ -4,6 +4,7 @@ import { iNavListItem } from "../../core";
 export interface iDashboardNavItems extends Omit<iNavListItem, "isActive"> {}
 
 export interface iDashboardProps {
+  Logo?: React.ReactNode;
   navItems: iDashboardNavItems[];
   LinkComponent: React.ElementType;
   activePathname: string;
