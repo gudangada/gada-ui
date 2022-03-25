@@ -2,9 +2,9 @@ import * as React from "react";
 import { iSideNavProps, iTopBottomNavItems } from "./types";
 import { NavListItems } from "../NavListItem";
 import { Col, Drawer, Divider } from "../../layout";
-import { GadaLogo } from "../../../assets";
 
 const SideNav: React.VFC<iSideNavProps> = ({
+  Logo,
   drawerProps,
   navItemsProps: { navItems, ...restNavProps },
   stickyBottomFooter,
@@ -51,9 +51,11 @@ const SideNav: React.VFC<iSideNavProps> = ({
       {...drawerProps}
     >
       <Col flex={1}>
-        <Col vCenter className="p-4">
-          <GadaLogo />
-        </Col>
+        {Logo && (
+          <Col vCenter className="p-4">
+            {Logo}
+          </Col>
+        )}
         <Divider />
         <Col flex={1} justifyContent="space-between">
           <NavListItems {...restNavProps} navItems={topNavItems} />
