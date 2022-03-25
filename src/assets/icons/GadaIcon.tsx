@@ -3,8 +3,8 @@ import { iIconProps } from "./types";
 import useIconStyles from "./useIconStyles";
 
 const GadaIcon: React.VFC<iIconProps> = ({
-  width = "29",
-  height = "28",
+  width = "24",
+  height = "24",
   fill = "none",
   color = "white",
 }) => {

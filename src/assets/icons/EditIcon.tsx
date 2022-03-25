@@ -3,8 +3,8 @@ import { iIconProps } from "./types";
 import useIconStyles from "./useIconStyles";
 
 const EditIcon: React.VFC<iIconProps> = ({
-  width = "19",
-  height = "18",
+  width = "24",
+  height = "24",
   color,
 }) => {
   const { iconColor } = useIconStyles({ color });

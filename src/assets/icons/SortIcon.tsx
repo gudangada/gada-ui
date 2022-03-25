@@ -8,8 +8,8 @@ interface iSortIconProps extends iIconProps {
 }
 
 const SortIcon: React.VFC<iSortIconProps> = ({
-  width = "20",
-  height = "20",
+  width = "24",
+  height = "24",
   sort,
 }) => {
   const { palette } = useTheme<AppTheme>();
