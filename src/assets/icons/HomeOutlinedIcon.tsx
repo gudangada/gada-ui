@@ -2,7 +2,7 @@ import * as React from "react";
 import { iIconProps } from "./types";
 import useIconStyles from "./useIconStyles";
 
-const CheckMarkIcon: React.VFC<iIconProps> = ({
+const HomeOutlinedIcon: React.VFC<iIconProps> = ({
   width = "24",
   height = "24",
   color,
@@ -13,19 +13,16 @@ const CheckMarkIcon: React.VFC<iIconProps> = ({
     <svg
       width={width}
       height={height}
+      viewBox="0 0 23 19"
       fill="none"
-      viewBox="0 0 12 9"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="m10.207 1-6.33 6.33L1 4.453"
-        stroke={iconColor}
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M11.1765 3.00647L16.7647 8.03588V16.7647H14.5294V10.0588H7.82353V16.7647H5.58823V8.03588L11.1765 3.00647V3.00647ZM11.1765 0L0 10.0588H3.35294V19H10.0588V12.2941H12.2941V19H19V10.0588H22.3529L11.1765 0Z"
+        fill={iconColor}
       />
     </svg>
   );
 };
 
-export default CheckMarkIcon;
+export default HomeOutlinedIcon;

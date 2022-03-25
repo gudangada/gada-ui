@@ -1,5 +1,4 @@
 export { default as GadaIcon } from "./GadaIcon";
-export { default as GadaLogo } from "./GadaLogo";
 export { default as CrossCircleIcon } from "./CrossCircleIcon";
 export { default as CrossOutlinedIcon } from "./CrossOutlinedIcon";
 export { default as SearchIcon } from "./SearchIcon";
@@ -13,7 +12,11 @@ export { default as ArrowUpIcon } from "./ArrowUpIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
 export { default as CalendarIcon } from "./CalendarIcon";
 export { default as TimeIcon } from "./TimeIcon";
+export { default as HomeOutlinedIcon } from "./HomeOutlinedIcon";
 export { default as HomeIcon } from "./HomeIcon";
 export { default as LogoutIcon } from "./LogoutIcon";
+export { default as CampaignIcon } from "./CampaignIcon";
+export { default as RedemptionIcon } from "./RedemptionIcon";
+export { default as SettingsIcon } from "./SettingsIcon";
 export * from "./ExpandIcon";
 export * from "./types";
