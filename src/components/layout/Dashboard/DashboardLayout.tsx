@@ -5,6 +5,7 @@ import { Row } from "../Row";
 import { iDashboardProps } from "./types";
 
 const DashboardLayout: React.FC<iDashboardProps> = ({
+  Logo,
   navItems,
   LinkComponent,
   activePathname,
@@ -41,6 +42,7 @@ const DashboardLayout: React.FC<iDashboardProps> = ({
   return (
     <Row>
       <SideNav
+        Logo={Logo}
         navItemsProps={{ navItems: sideNavItems, LinkComponent }}
         stickyBottomFooter={stickyBottomFooter}
       />
