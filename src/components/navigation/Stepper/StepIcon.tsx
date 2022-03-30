@@ -17,7 +17,7 @@ const StepIcon: React.FC<iStepIconProps> = ({
     <StepIconRoot active={isActive} error={error} className={className}>
       <StyledStepIcon active={active} completed={completed} error={error}>
         {completed ? (
-          <CheckMarkIcon color={active ? "white" : "default"} />
+          <CheckMarkIcon color={active ? "white" : "default"} width={12} />
         ) : (
           <Text variant="captionSemiBold">{tabIndex + 1}</Text>
         )}
