@@ -10,14 +10,15 @@ export default {
 } as Meta;
 
 export const TextField: React.VFC = () => {
-  const [values, setValues] = React.useState<string[]>([]);
+  const [values, setValues] = React.useState<any[]>([]);
 
   const handleChange =
     (index: number) =>
     (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setValues((curVals) => {
-        curVals[index] = event.target.value;
-        return curVals;
+        const newValues = [...curVals];
+        newValues[index] = event.target.value;
+        return newValues;
       });
     };
 
@@ -45,18 +46,18 @@ export const TextField: React.VFC = () => {
       <TextFieldUI
         id="example-text-field"
         name="Example TextField"
-        value={values[1]}
+        value={values[2]}
         label="Label"
         EndIcon={EditIcon}
-        onChange={handleChange(1)}
+        onChange={handleChange(2)}
       />
       <TextFieldUI
         id="example-text-field"
         name="Example TextField"
-        value={values[2]}
+        value={values[3]}
         label="Label"
         errorText="Helper text"
-        onChange={handleChange(2)}
+        onChange={handleChange(3)}
       />
       <TextFieldUI
         id="example-text-field"
@@ -65,7 +66,15 @@ export const TextField: React.VFC = () => {
         label="Label"
         errorText="Helper Text"
         disabled
-        onChange={handleChange(3)}
+        onChange={handleChange(4)}
+      />
+      <TextFieldUI
+        id="example-number-field"
+        name="Example Number Field"
+        value={values[5]}
+        label="Number Field"
+        onChange={handleChange(5)}
+        type="number"
       />
     </Col>
   );

@@ -66,7 +66,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
           inputProps={{
             name,
             value:
-              type === "number"
+              type === "number" && inputValue
                 ? numberFormatter(inputValue as string)
                 : inputValue,
             inputMode,
