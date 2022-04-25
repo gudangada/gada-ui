@@ -25,7 +25,7 @@ const Template: Story<iAutoCompleteProps<any, any, any, any>> = () => {
         onChange={(_, newValue) => {
           setSingleValue(newValue as iOption);
         }}
-        getOptionLabel={(option) => option.label}
+        getOptionLabel={(option) => (option as iOption).label}
         renderTags={(tagValue, getTagProps) =>
           tagValue.map((option, index) => (
             <Chip label={option.label} {...getTagProps({ index })} />
@@ -42,7 +42,7 @@ const Template: Story<iAutoCompleteProps<any, any, any, any>> = () => {
         onChange={(_, newValue) => {
           setValue(newValue as iOption[]);
         }}
-        getOptionLabel={(option: iOption) => option.label}
+        getOptionLabel={(option) => (option as iOption).label}
         renderTags={(tagValue, getTagProps) =>
           tagValue.map((option: iOption, index) => (
             <Chip label={option.label} {...getTagProps({ index })} />
