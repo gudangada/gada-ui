@@ -73,19 +73,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
             onBlur,
             ...inputProps,
           }}
-          onChange={(event) =>
-            type === "number"
-              ? onChange?.({
-                  ...event,
-                  target: {
-                    ...event.target,
-                    value: thousandSeparatedStringToNumber(
-                      event.target.value
-                    ) as unknown as string,
-                  },
-                })
-              : onChange?.(event)
-          }
+          onChange={onChange}
           error={isError}
           classes={classes}
           {...outlinedInputProps}
