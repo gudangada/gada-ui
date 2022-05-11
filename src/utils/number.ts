@@ -34,7 +34,7 @@ export const numberFormatter = (
     Number(amountValue)
   );
 
-  if (isNaN(thousandSeparatedStringToNumber(amountValue))) {
+  if (thousandSeparatedStringToNumber(amountValue) === null) {
     formattedString = "0";
   }
 
@@ -47,8 +47,15 @@ export const numberFormatter = (
   return formattedString;
 };
 
-export const thousandSeparatedStringToNumber = (amount: string): number => {
-  return parseFloat(amount.split(".").join(""));
+export const getNonDecimalNumber = (num: string): string => {
+  return num.split(",")[0];
+};
+
+export const thousandSeparatedStringToNumber = (
+  amount: string
+): number | null => {
+  const num = parseFloat(amount.split(".").join(""));
+  return isNaN(num) ? null : num;
 };
 
 export const isNumeric = (value: any): boolean => {

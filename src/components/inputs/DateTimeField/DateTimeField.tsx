@@ -1,6 +1,6 @@
 import { Dayjs } from "dayjs";
 import * as React from "react";
-import { dayjsInstance, formatDate } from "../../../utils";
+import { DateTimeUtils } from "../../../utils";
 import { Col, Row } from "../../layout";
 import { DateField } from "../DateField";
 import { FormHelperText } from "../FormHelperText";
@@ -22,15 +22,14 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
   const [date, setDate] = React.useState<string>("");
   const [time, setTime] = React.useState<string>("");
   const inputFormat = `${dateFormat}${dateTimeSeparator}${timeFormat}`;
-  const [localDateTimeObject, setLocalDateTimeObject] = React.useState<
-    Dayjs | undefined
-  >(undefined);
+  const [localDateTimeObject, setLocalDateTimeObject] =
+    React.useState<Dayjs | undefined>(undefined);
   const localDateTimeRef = React.useRef(localDateTimeObject);
 
   const onChangeDate = React.useCallback(
     (date: string) => {
-      let dateObj = dayjsInstance(date);
-      const timeObj = dayjsInstance(time);
+      let dateObj = DateTimeUtils.dayjsInstance(date);
+      const timeObj = DateTimeUtils.dayjsInstance(time);
       const timeConfig = { hour: 0, minute: 0, second: 0, millisecond: 0 };
       if (timeObj.isValid()) {
         timeConfig.hour = timeObj.get("hour");
@@ -50,8 +49,8 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
 
   const onChangeTime = React.useCallback(
     (time: string) => {
-      let dateObj = dayjsInstance(date);
-      const timeObj = dayjsInstance(time);
+      let dateObj = DateTimeUtils.dayjsInstance(date);
+      const timeObj = DateTimeUtils.dayjsInstance(time);
       const timeConfig = { hour: 0, minute: 0, second: 0, millisecond: 0 };
       if (timeObj.isValid()) {
         timeConfig.hour = timeObj.get("hour");
@@ -71,12 +70,12 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
 
   React.useEffect(() => {
     if (date && time && localDateTimeObject && localDateTimeObject.isValid()) {
-      onChange(formatDate(localDateTimeObject, inputFormat));
+      onChange(DateTimeUtils.formatDate(localDateTimeObject, inputFormat));
     }
   }, [date, time, inputFormat, localDateTimeObject]);
 
   React.useEffect(() => {
-    const dateTimeObj = dayjsInstance(dateTimeValue);
+    const dateTimeObj = DateTimeUtils.dayjsInstance(dateTimeValue);
     if (dateTimeObj.isSame(localDateTimeRef.current)) return;
 
     if (dateTimeValue && dateTimeObj.isValid()) {

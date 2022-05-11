@@ -76,6 +76,15 @@ export const TextField: React.VFC = () => {
         onChange={handleChange(5)}
         type="number"
       />
+      <TextFieldUI
+        id="example-number-field"
+        name="Example Number Field with Decimal"
+        value={values[6]}
+        label="Number Field"
+        onChange={handleChange(6)}
+        type="number"
+        allowDecimal
+      />
     </Col>
   );
 };
