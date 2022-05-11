@@ -1,10 +1,7 @@
 import { FormControl, OutlinedInput, InputAdornment } from "@mui/material";
 import clsx from "clsx";
 import * as React from "react";
-import {
-  numberFormatter,
-  thousandSeparatedStringToNumber,
-} from "../../../utils";
+import { NumberUtils } from "../../../utils";
 import { FormHelperText } from "../FormHelperText";
 import { Label } from "../Label";
 import { iTextFieldProps } from "./types";
@@ -33,11 +30,20 @@ const TextField: React.VFC<iTextFieldProps> = ({
   classes,
   inputProps,
   type,
+  allowDecimal = false,
   ...outlinedInputProps
 }) => {
   const isError = Boolean(errorText) || error;
   const showHelperText = helperText !== undefined && helperText !== errorText;
   const inputValue = value ?? defaultValue;
+
+  const onChangeText: iTextFieldProps["onChange"] = (evt) => {
+    let val = evt.target.value;
+    if (!allowDecimal) {
+      val = NumberUtils.getNonDecimalNumber(val);
+    }
+    return onChange?.({ ...evt, target: { ...evt.target, value: val } });
+  };
 
   return (
     <div
@@ -67,13 +73,13 @@ const TextField: React.VFC<iTextFieldProps> = ({
             name,
             value:
               type === "number" && inputValue
-                ? numberFormatter(inputValue as string)
+                ? NumberUtils.numberFormatter(inputValue as string)
                 : inputValue,
             inputMode,
             onBlur,
             ...inputProps,
           }}
-          onChange={onChange}
+          onChange={onChangeText}
           error={isError}
           classes={classes}
           {...outlinedInputProps}

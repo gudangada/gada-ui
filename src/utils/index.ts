@@ -1,3 +1,3 @@
-export * from "./date-time";
-export * from "./urls";
-export * from "./number";
+export * as DateTimeUtils from "./date-time";
+export * as UrlUtils from "./urls";
+export * as NumberUtils from "./number";
