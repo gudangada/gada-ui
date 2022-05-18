@@ -1,6 +1,6 @@
 import * as React from "react";
 import { iSideNavProps, iTopBottomNavItems } from "./types";
-import { NavListItems } from "../NavListItem";
+import { NavListItems } from "../../core/NavListItem";
 import { Col, Drawer, Divider } from "../../layout";
 
 const SideNav: React.VFC<iSideNavProps> = ({

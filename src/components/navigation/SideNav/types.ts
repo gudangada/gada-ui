@@ -1,6 +1,6 @@
 import * as React from "react";
 import { iDrawerProps } from "../../layout";
-import { iNavListItemsProps } from "../NavListItem";
+import { iNavListItemsProps } from "../../core/NavListItem";
 
 export interface iSideNavProps {
   Logo?: React.ReactNode;
