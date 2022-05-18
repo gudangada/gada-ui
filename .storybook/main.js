@@ -3,7 +3,6 @@ const toPath = (filePath) => path.join(process.cwd(), filePath);
 
 module.exports = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx|mdx)"],
-  staticDirs: ["../src/assets"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-docs",
@@ -29,7 +28,7 @@ module.exports = {
           },
         },
       ],
-      include: path.resolve(__dirname, "../src"),
+      include: path.resolve(__dirname, "../"),
     });
 
     return {
