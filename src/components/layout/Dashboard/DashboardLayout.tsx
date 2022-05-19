@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import * as React from "react";
-import { iNavListItem, SideNav } from "../../core";
+import { iNavListItem } from "../../core";
 import { Row } from "../Row";
 import { iDashboardProps } from "./types";
+import { SideNav } from "../../navigation";
 
 const DashboardLayout: React.FC<iDashboardProps> = ({
   Logo,

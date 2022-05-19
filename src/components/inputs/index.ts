@@ -8,3 +8,6 @@ export * from "./TimeField";
 export * from "./DateTimeField";
 export * from "./CheckboxGroup";
 export * from "./AutoComplete";
+export * from "./FormControlLabel";
+export * from "./RadioGroup";
+export * from "./FormControl";

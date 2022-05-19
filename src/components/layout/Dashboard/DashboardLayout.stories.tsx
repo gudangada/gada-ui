@@ -14,14 +14,14 @@ export default {
 const DashboardNavigation: iDashboardNavItems[] = [
   {
     icon: <HomeIcon />,
-    url: "#",
-    baseUrl: "#",
+    url: "javascript:void(0);",
+    baseUrl: "javascript:void(0);",
     text: "Beranda",
   },
   {
     icon: <CampaignIcon />,
-    url: "#",
-    baseUrl: "#",
+    url: "javascript:void(0);",
+    baseUrl: "javascript:void(0);",
     text: "Campaign",
   },
 ];
