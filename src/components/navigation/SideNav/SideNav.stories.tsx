@@ -2,7 +2,7 @@ import * as React from "react";
 import SideNavUI from "./SideNav";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { iSideNavProps } from "./types";
-import { HomeIcon } from "../../../assets";
+import { HomeIcon, CampaignIcon } from "../../../assets";
 import { Col } from "../../layout";
 import { Drawer as DrawerStory } from "../../layout/Drawer/Drawer.stories";
 
@@ -27,7 +27,7 @@ const sideNavProps: iSideNavProps = {
         baseUrl: "javascript:void(0);",
         text: "Nav Item 2",
         url: "javascript:void(0);",
-        icon: <HomeIcon />,
+        icon: <CampaignIcon />,
         subNav: [
           {
             url: "javascript:void(0);",
