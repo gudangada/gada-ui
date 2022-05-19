@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import { iTextProps } from "../../core/Text";
-import { iEmptyDataMessageProps } from "../EmptyDataMessage";
+import { iEmptyDataMessageProps } from "../../feedback/EmptyDataMessage";
 
 export type iRenderTableRowItemHandler<T> = (
   item: T,
