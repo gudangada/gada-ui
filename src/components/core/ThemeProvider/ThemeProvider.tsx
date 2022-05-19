@@ -11,6 +11,7 @@ import { SnackbarProvider } from "../../feedback";
 const ThemeProvider: React.FC<iGadaThemeProviderProps> = ({
   children,
   withSnackbarProvider = true,
+  snackbarProps,
 }) => {
   return (
     <StylesProvider injectFirst>
@@ -18,7 +19,7 @@ const ThemeProvider: React.FC<iGadaThemeProviderProps> = ({
         <MuiThemeProvider theme={theme}>
           <CssBaseline />
           {withSnackbarProvider ? (
-            <SnackbarProvider>{children}</SnackbarProvider>
+            <SnackbarProvider {...snackbarProps}>{children}</SnackbarProvider>
           ) : (
             { children }
           )}
