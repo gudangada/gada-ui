@@ -21,7 +21,7 @@ const ThemeProvider: React.FC<iGadaThemeProviderProps> = ({
           {withSnackbarProvider ? (
             <SnackbarProvider {...snackbarProps}>{children}</SnackbarProvider>
           ) : (
-            { children }
+            children
           )}
         </MuiThemeProvider>
       </Emotion10ThemeProvider>
