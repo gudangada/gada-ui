@@ -14,7 +14,7 @@ import TableRow from "./TableRow";
 import TablePagination from "./TablePagination";
 import { TableFooter } from "./styles";
 import { iTableHeadingCell, iTableProps, SortIconPosition } from "./types";
-import { EmptyDataMessage } from "../EmptyDataMessage";
+import { EmptyDataMessage } from "../../feedback/EmptyDataMessage";
 import { Skeleton } from "../../feedback";
 
 const Table: React.VFC<iTableProps<any>> = ({

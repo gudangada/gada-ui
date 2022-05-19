@@ -1,6 +1,6 @@
 {
   "name": "@gudangada/design-system",
-  "version": "0.1.6",
+  "version": "0.1.10",
   "description": "Gada Design System",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -13,8 +13,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./src",
+    "build-storybook": "build-storybook -c .storybook watch-css -s ./src",
     "build": "rimraf lib && tsc && rollup -c rollup.config.js",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx} **/*.{ts,tsx} --fix",
     "prettier": "prettier --write src/**/*.{ts,tsx} **/*.{ts,tsx}",

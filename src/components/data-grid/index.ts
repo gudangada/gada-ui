@@ -1,2 +1,1 @@
-export * from "./RadioGroup";
-export * from "./FormControlLabel";
+export * from "./Table";

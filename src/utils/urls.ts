@@ -1,4 +1,4 @@
-export type QueryParamMap = {
+type QueryParamMap = {
   [key: string]: string;
 };
 

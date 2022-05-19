@@ -16,21 +16,46 @@ export const currencyFormatter = (
   return formattedString;
 };
 
-export const numberFormatter = (amount: string | number): string => {
-  const unformattedString = amount.toString();
+export const numberFormatter = (
+  amount: string | number,
+  decimalPoint = ","
+): string => {
+  const unformattedString = amount.toString().split(".").join("");
+  const hasDecimalPoint = unformattedString.includes(decimalPoint);
+  const stringSplit = unformattedString.split(decimalPoint);
+
+  const amountValue = stringSplit[0];
+  let decimalValue = "";
+  if (stringSplit[1]) {
+    decimalValue = stringSplit[1];
+  }
 
   let formattedString = new Intl.NumberFormat("id-ID").format(
-    Number(unformattedString)
+    Number(amountValue)
   );
 
-  if (isNaN(thousandSeparatedStringToNumber(formattedString))) {
+  if (thousandSeparatedStringToNumber(amountValue) === null) {
     formattedString = "0";
+  }
+
+  if (hasDecimalPoint) {
+    if (decimalValue) {
+      return `${formattedString}${decimalPoint}${decimalValue}`;
+    }
+    return `${formattedString}${decimalPoint}`;
   }
   return formattedString;
 };
 
-export const thousandSeparatedStringToNumber = (amount: string): number => {
-  return parseFloat(amount.split(".").join(""));
+export const getNonDecimalNumber = (num: string): string => {
+  return num.split(",")[0];
+};
+
+export const thousandSeparatedStringToNumber = (
+  amount: string
+): number | null => {
+  const num = parseFloat(amount.split(".").join(""));
+  return isNaN(num) ? null : num;
 };
 
 export const isNumeric = (value: any): boolean => {

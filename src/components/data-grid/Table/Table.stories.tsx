@@ -4,7 +4,12 @@ import { orderBy } from "lodash";
 import * as React from "react";
 import { Text } from "../../core";
 import Table from "./Table";
-import { Order, iTableHeadingCell, iRenderTableRowItemHandler } from "./types";
+import {
+  Order,
+  iTableHeadingCell,
+  iRenderTableRowItemHandler,
+  iTableProps,
+} from "./types";
 
 export default {
   title: "Components/Data Grid",
@@ -20,7 +25,7 @@ interface iFood {
   protein: number;
 }
 
-export const SimpleTable: React.VFC = () => {
+export const SimpleTable: React.VFC<iTableProps<iFood>> = () => {
   const tableHeadingCells: iTableHeadingCell[] = [
     { id: "name", content: "Dessert (100g serving)" },
     { id: "calories", content: "Calories" },
@@ -103,7 +108,7 @@ export const SimpleTable: React.VFC = () => {
   );
 };
 
-export const SortableTable: React.VFC = () => {
+export const SortableTable: React.VFC<iTableProps<iFood>> = () => {
   const [rows, setRows] = React.useState<iFood[]>([
     {
       id: "Cupcake",
@@ -215,53 +220,37 @@ export const SortableTable: React.VFC = () => {
     Array(5).fill(undefined)
   );
 
+  const handleSort =
+    (colName: string, index: number) =>
+    (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+      event.preventDefault();
+      const _rows = [...rows];
+      const sortedRows = orderBy(
+        _rows,
+        [colName],
+        [order[index] === Order.Asc ? "desc" : "asc"]
+      );
+
+      const _order = [...order];
+      _order[index] = order[index] === Order.Asc ? Order.Desc : Order.Asc;
+
+      setRows(sortedRows);
+      setOrder(_order);
+    };
+
   const tableHeadingCells: iTableHeadingCell[] = [
     { id: "name", content: "Dessert (100g serving)", isSortable: false },
     {
       id: "calories",
       content: "Calories",
       isSortable: true,
-      handleSort: React.useCallback(
-        (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-          event.preventDefault();
-          const _rows = [...rows];
-          const sortedRows = orderBy(
-            _rows,
-            ["calories"],
-            [order[1] === Order.Asc ? "desc" : "asc"]
-          );
-
-          const _order = [...order];
-          _order[1] = order[1] === Order.Asc ? Order.Desc : Order.Asc;
-
-          setRows(sortedRows);
-          setOrder(_order);
-        },
-        [order, rows]
-      ),
+      handleSort: handleSort("calories", 1),
     },
     {
       id: "fat",
       content: "Fat (g)",
       isSortable: true,
-      handleSort: React.useCallback(
-        (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-          event.preventDefault();
-          const _rows = [...rows];
-          const sortedData = orderBy(
-            _rows,
-            ["fat"],
-            [order[2] === Order.Asc ? "desc" : "asc"]
-          );
-
-          const _order = [...order];
-          _order[2] = _order[2] === Order.Asc ? Order.Desc : Order.Asc;
-
-          setRows(sortedData);
-          setOrder(_order);
-        },
-        [order, rows]
-      ),
+      handleSort: handleSort("fat", 2),
     },
     { id: "carbs", content: "Carbs (g)", isSortable: false },
     { id: "protein", content: "Protein (g)", isSortable: false },
