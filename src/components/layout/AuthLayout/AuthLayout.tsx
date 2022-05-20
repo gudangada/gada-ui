@@ -5,9 +5,9 @@ import {
   MainContainer,
   RightContainer,
 } from "./styles";
-import { AuthLayoutProps } from "./types";
+import { iAuthLayoutProps } from "./types";
 
-const AuthLayout: React.VFC<AuthLayoutProps> = ({ children }) => {
+const AuthLayout: React.VFC<iAuthLayoutProps> = ({ children }) => {
   return (
     <MainContainer vCenter={false}>
       <LeftContainer flex={1} />

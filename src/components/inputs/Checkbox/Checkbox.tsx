@@ -4,26 +4,31 @@ import {
   FormControlLabel as MuiFormControlLabel,
 } from "@mui/material";
 import { iCheckboxProps } from "./types";
-import { Row } from "../../layout";
 import { Text } from "../../core";
+import clsx from "clsx";
 
 const Checkbox: React.VFC<iCheckboxProps> = ({
   label,
   containerClassName,
   ...props
 }) => {
-  return (
-    <Row vCenter className={containerClassName}>
-      <MuiFormControlLabel
-        key={props.name}
-        control={<MuiCheckbox className="pl-2" {...props} />}
-        label={
-          <Text variant="bodyRegular" className="ml-2">
-            {label}
-          </Text>
-        }
-      />
-    </Row>
+  const checkboxComp = (
+    <MuiCheckbox className={clsx(label ? "pl-2" : "-ml-0.5")} {...props} />
+  );
+
+  return label ? (
+    <MuiFormControlLabel
+      key={props.name}
+      className={containerClassName}
+      control={checkboxComp}
+      label={
+        <Text variant="bodyRegular" className="ml-2">
+          {label}
+        </Text>
+      }
+    />
+  ) : (
+    checkboxComp
   );
 };
 

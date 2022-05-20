@@ -7,6 +7,7 @@ import { Col } from "../../layout";
 import { Checkbox } from "@mui/material";
 
 export default {
+  id: "formcontrollabel",
   title: "Components/Inputs",
   component: FormControlLabelUI,
 } as Meta<iFormControlLabelProps>;

@@ -1,6 +1,6 @@
 import { CheckboxProps } from "@mui/material";
 
 export interface iCheckboxProps extends CheckboxProps {
-  label: string;
+  label?: string;
   containerClassName?: string;
 }
