@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { pxToRem } from "../../../styles";
-import { Col } from "../Col";
-import { Row } from "../Row";
+import { Col, Row } from "../../core";
 
 export const MainContainer = styled(Row)(() => ({
   height: "100vh",

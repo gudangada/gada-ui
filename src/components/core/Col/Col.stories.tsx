@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Meta } from "@storybook/react";
 import ColUI from "./Col";
-import { Text } from "../../core";
+import { Text } from "..";
 
 export default {
-  title: "Components/Layout",
+  title: "Components/Core",
   component: ColUI,
 } as Meta;
 

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { pxToRem } from "../../../styles";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 
 export const Container = styled(Col)({
   paddingTop: pxToRem(32),

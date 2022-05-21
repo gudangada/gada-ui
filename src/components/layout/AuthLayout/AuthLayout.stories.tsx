@@ -2,7 +2,7 @@ import * as React from "react";
 import AuthLayoutUI from "./AuthLayout";
 import { Meta } from "@storybook/react";
 import { iAuthLayoutProps } from "./types";
-import { Col } from "../Col";
+import { Col } from "../../core/Col";
 import { Text } from "../../core";
 
 export default {
@@ -14,7 +14,7 @@ export const AuthLayout: React.VFC<iAuthLayoutProps> = () => {
   return (
     <AuthLayoutUI>
       <Col>
-        <Text variant="bodyRegular">Content would be here</Text>
+        <Text variant="bodyRegular">Login content would be here</Text>
       </Col>
     </AuthLayoutUI>
   );

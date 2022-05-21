@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 
 export const StyledAutoCompleteContainer = styled(Col)<{ isError?: boolean }>(
   ({ theme: { palette }, isError }) => ({

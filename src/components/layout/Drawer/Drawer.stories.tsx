@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import DrawerUI from "./Drawer";
-import { Col } from "../Col";
+import { Col } from "../../core/Col";
 import { Text } from "../../core";
 
 export default {

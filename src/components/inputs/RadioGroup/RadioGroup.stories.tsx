@@ -8,7 +8,7 @@ import { Radio } from "@mui/material";
 import { Label } from "../Label";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: RadioGroupUI,
 } as Meta<iRadioGroupProps>;
 

@@ -2,8 +2,7 @@ import * as React from "react";
 import { Meta } from "@storybook/react";
 import ThemeProviderUI from "./ThemeProvider";
 import { iGadaThemeProviderProps } from "./types";
-import { Col, Row } from "../../layout";
-import { Text } from "../Text";
+import { Col, Row, Text } from "../../core";
 import { useSnackbar } from "../../feedback";
 import { Button } from "../Button";
 

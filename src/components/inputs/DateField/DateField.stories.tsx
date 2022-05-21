@@ -4,7 +4,7 @@ import DateFieldUI from "./DateField";
 import { iDateFieldProps } from "./types";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: DateFieldUI,
 } as Meta;
 

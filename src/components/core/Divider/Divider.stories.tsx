@@ -3,10 +3,10 @@ import { Meta, Story } from "@storybook/react";
 import DividerUI from "./Divider";
 import { iDividerProps } from "./types";
 import { Col } from "../Col";
-import { Text } from "../../core";
+import { Text } from "../Text";
 
 export default {
-  title: "Components/Layout",
+  title: "Components/Core",
   component: DividerUI,
 } as Meta;
 

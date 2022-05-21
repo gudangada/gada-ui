@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Text } from "../../core";
-import { Col } from "../../layout";
+import { Col, Text } from "../../core";
 import { Container } from "./styles";
 import { iEmptyDataMessageProps } from "./types";
 

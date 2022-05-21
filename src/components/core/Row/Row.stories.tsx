@@ -1,10 +1,10 @@
 import { Meta } from "@storybook/react";
 import * as React from "react";
 import RowUI from "./Row";
-import { Text } from "../../core";
+import { Text } from "../Text";
 
 export default {
-  title: "Components/Layout",
+  title: "Components/Core",
   component: RowUI,
 } as Meta;
 

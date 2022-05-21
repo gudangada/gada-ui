@@ -2,11 +2,11 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import CheckboxGroupUI from "./CheckboxGroup";
 import { iCheckboxControl, iCheckboxGroupProps } from "./types";
-import { Row } from "../../layout";
+import { Row } from "../../core";
 import { Label } from "../Label";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: CheckboxGroupUI,
 } as Meta;
 

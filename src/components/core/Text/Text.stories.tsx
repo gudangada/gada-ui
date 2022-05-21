@@ -2,7 +2,7 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import TextUI from "./Text";
 import { iTextProps } from "./types";
-import { Col } from "../../layout";
+import { Col } from "../Col";
 
 export default {
   title: "Components/Core",

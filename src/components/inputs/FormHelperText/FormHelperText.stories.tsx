@@ -5,7 +5,7 @@ import { iFormHelperTextProps } from "./types";
 import { CalendarIcon } from "../../../assets";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: FormHelperTextUI,
   args: {
     error: false,
