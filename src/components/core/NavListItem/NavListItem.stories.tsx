@@ -2,7 +2,7 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import NavListItemUI from "./NavListItem";
 import { iNavListItem, iNavListItemProps } from "./types";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { HomeIcon } from "../../../assets";
 
 export default {

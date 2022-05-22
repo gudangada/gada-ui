@@ -2,8 +2,7 @@ import { Slide } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import * as React from "react";
 import { CrossOutlinedIcon } from "../../../assets";
-import { Button, Text } from "../../core";
-import { Row } from "../../layout";
+import { Row, Button, Text } from "../../core";
 import {
   Dialog,
   DialogActions,

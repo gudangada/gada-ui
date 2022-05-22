@@ -2,12 +2,11 @@ import * as React from "react";
 import { OptionsObject, useSnackbar, WithSnackbarProps } from "notistack";
 import { iSnackbarUtilsConfiguratorProps } from "./types";
 
-const InnerSnackbarUtilsConfigurator: React.FC<
-  iSnackbarUtilsConfiguratorProps
-> = ({ setUseSnackbarRef }) => {
-  setUseSnackbarRef(useSnackbar());
-  return null;
-};
+const InnerSnackbarUtilsConfigurator: React.FC<iSnackbarUtilsConfiguratorProps> =
+  ({ setUseSnackbarRef }) => {
+    setUseSnackbarRef(useSnackbar());
+    return null;
+  };
 
 let useSnackbarRef: WithSnackbarProps;
 const setUseSnackbarRef = (useSnackbarRefProp: WithSnackbarProps) => {

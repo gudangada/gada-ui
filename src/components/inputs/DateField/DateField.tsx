@@ -2,7 +2,7 @@ import * as React from "react";
 import { DatePicker, LocalizationProvider } from "@mui/lab";
 import AdapterDayjs from "@mui/lab/AdapterDayjs";
 import { iDateFieldProps } from "./types";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { Label } from "../Label";
 import { TextField } from "../TextField";
 import { CalendarIcon } from "../../../assets";

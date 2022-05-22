@@ -1,5 +1,6 @@
 export { Typography } from "./Typography.styles";
 export { Palette } from "./Palette.styles";
+export { Shadows } from "./Shadows.styles";
 export { zIndex } from "./zIndex.styles";
 
 import merge from "merge";

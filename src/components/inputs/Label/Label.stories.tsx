@@ -1,11 +1,11 @@
 import * as React from "react";
 import LabelUI from "./Label";
 import { Meta } from "@storybook/react";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { TextField } from "../TextField";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: LabelUI,
   args: {
     children: "Form Label",

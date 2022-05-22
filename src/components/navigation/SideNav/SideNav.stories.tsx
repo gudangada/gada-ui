@@ -3,7 +3,7 @@ import SideNavUI from "./SideNav";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { iSideNavProps } from "./types";
 import { HomeIcon, CampaignIcon } from "../../../assets";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { Drawer as DrawerStory } from "../../layout/Drawer/Drawer.stories";
 
 export default {

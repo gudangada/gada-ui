@@ -2,12 +2,11 @@ import * as React from "react";
 import { Meta } from "@storybook/react";
 import RadioUI from "./Radio";
 import { iRadioProps } from "./types";
-import { Col, Row } from "../../layout";
 import { Label } from "../Label";
-import { Text } from "../../core";
+import { Col, Row, Text } from "../../core";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: RadioUI,
 } as Meta<iRadioProps>;
 

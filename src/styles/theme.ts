@@ -1,13 +1,15 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, ThemeOptions } from "@mui/material/styles";
 import ComponentStyles, {
   Palette,
   Typography,
   zIndex,
+  Shadows,
 } from "./component-styles";
 import "@emotion/react";
 
 export const themeOptions = {
   palette: Palette,
+  shadows: Shadows,
   typography: Typography,
   components: ComponentStyles,
 };

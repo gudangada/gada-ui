@@ -18,7 +18,7 @@ import CrossOutlinedIcon from "./CrossOutlinedIcon";
 import HomeIcon from "./HomeIcon";
 
 export default {
-  title: "Assets",
+  title: "Global/Assets",
   component: EditIcon,
 } as Meta;
 

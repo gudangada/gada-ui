@@ -2,11 +2,11 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import AutoCompleteUI from "./AutoComplete";
 import { iAutoCompleteProps } from "./types";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { Chip } from "@mui/material";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: AutoCompleteUI,
 } as Meta;
 

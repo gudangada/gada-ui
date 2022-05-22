@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Meta } from "@storybook/react";
 import TextFieldUI from "./TextField";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { EditIcon, PlusIcon } from "../../../assets";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: TextFieldUI,
 } as Meta;
 

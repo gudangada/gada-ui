@@ -3,12 +3,12 @@ import FormControlLabelUI from "./FormControlLabel";
 import { Meta } from "@storybook/react";
 import { iFormControlLabelProps } from "./types";
 import { Radio } from "..";
-import { Col } from "../../layout";
+import { Col } from "../../core";
 import { Checkbox } from "@mui/material";
 
 export default {
   id: "formcontrollabel",
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: FormControlLabelUI,
 } as Meta<iFormControlLabelProps>;
 

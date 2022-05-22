@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import * as React from "react";
-import { iNavListItem } from "../../core";
-import { Row } from "../Row";
+import { Row, iNavListItem } from "../../core";
 import { iDashboardProps } from "./types";
 import { SideNav } from "../../navigation";
 

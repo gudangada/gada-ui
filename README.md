@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c07cdd6a-aa15-4aec-b223-2733e366cb84/deploy-status)](https://app.netlify.com/sites/gada-design-system/deploys)
+[Hosted on Vercel](https://gada-ui.vercel.app/)
 
 # Intro
 
@@ -8,6 +8,7 @@ A component library based on Gada Design System
 
 - `src/components` : used for all the react components
   - `/core` : contains all those components that have finalized design on figma
+  - `/data-grid` : contains the components that are used to show data in a certain way e.g. a `Table`.
   - `/lab` : contains all the experimental components that shouldn't be exported with the npm package
 - `src/hocs` : contains generic higher order components
 - `src/styles` : contains all the stuff related to theming, including tokens for colors, typography and mui component's overrides etc.
