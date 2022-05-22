@@ -1,5 +1,13 @@
 import { Shadows as ShadowsType } from "@mui/material/styles/shadows";
 
-export const Shadows = ["none", "0px 2px 15px rgba(0, 0, 0, 0.08)"].concat(
-  Array(19).fill("none")
-) as ShadowsType;
+const shadowsOverride = [
+  "none",
+  ...Array(20)
+    .fill("none")
+    .map(
+      (_, index) =>
+        `0px 2px 15px rgba(0, 0, 0, ${Math.min(1, index * 0.04 + 0.08)})`
+    ),
+];
+
+export const Shadows = shadowsOverride as ShadowsType;

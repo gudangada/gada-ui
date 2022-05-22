@@ -16,9 +16,13 @@ import { Divider } from "../Divider";
 export default {
   title: "Components/Core",
   component: CardUI,
+  args: {
+    elevation: 1,
+    variant: "elevation",
+  },
 } as Meta<iCardProps>;
 
-export const Card: React.FC<iCardProps> = () => {
+export const Card: React.FC<iCardProps> = ({ elevation, variant }) => {
   return (
     <Col spacing={16}>
       <Text variant="heading4SemiBold">
@@ -89,7 +93,7 @@ export const Card: React.FC<iCardProps> = () => {
         }}
       >
         <Col hCenter>
-          <CardUI elevation={1} sx={{ width: 345 }}>
+          <CardUI elevation={elevation} variant={variant} sx={{ width: 345 }}>
             <CardMedia
               image="/assets/images/indomie.png"
               sx={{ minHeight: 140 }}
