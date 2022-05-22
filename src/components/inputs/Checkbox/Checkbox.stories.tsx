@@ -2,14 +2,13 @@ import * as React from "react";
 import CheckboxUI from "./Checkbox";
 import { Meta } from "@storybook/react";
 import { iCheckboxProps } from "./types";
-import { Col, Row } from "../../layout";
-import { Text } from "../../core";
+import { Col, Row, Text } from "../../core";
 import { ExampleSection } from "../../../story-components";
 import { linkTo } from "@storybook/addon-links";
 
 export default {
   id: "checkbox",
-  title: "Components/Inputs",
+  title: "Components/Input",
 } as Meta<iCheckboxProps>;
 
 export const Checkbox: React.VFC<iCheckboxProps> = () => {

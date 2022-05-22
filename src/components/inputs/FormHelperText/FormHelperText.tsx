@@ -1,9 +1,8 @@
 import * as React from "react";
 import { FormHelperText as MuiFormHelperText } from "@mui/material";
 import { iFormHelperTextProps } from "./types";
-import { Text } from "../../core";
+import { Row, Text } from "../../core";
 import { useAppTheme } from "../../../hooks";
-import { Row } from "../../layout";
 
 const FormHelperText: React.FC<iFormHelperTextProps> = ({
   children,

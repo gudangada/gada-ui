@@ -3,3 +3,7 @@ export * from "./Text";
 export * from "./Button";
 export * from "./NavListItem";
 export * from "./Searchbar";
+export * from "./Card";
+export * from "./Col";
+export * from "./Row";
+export * from "./Divider";

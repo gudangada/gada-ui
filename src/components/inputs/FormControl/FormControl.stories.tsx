@@ -8,7 +8,7 @@ import { FormHelperText, iFormHelperTextProps } from "../FormHelperText";
 import { iLabelProps } from "../Label/types";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: FormControlUI,
   subcomponents: { TextField, Label, FormHelperText },
 } as Meta<iFormControlProps>;

@@ -1,4 +1,4 @@
-import { ThemeOptions } from "@mui/material";
+import { ThemeOptions, buttonClasses, typographyClasses } from "@mui/material";
 import { pxToRem } from "../utils";
 import { Palette } from "./Palette.styles";
 
@@ -69,13 +69,15 @@ export const Button: ThemeOptions["components"] = {
       },
       text: {
         boxShadow: "none",
-
-        "& .MuiTypography-root": {
-          color: Palette.interface.teal["500"],
-        },
+        padding: "0px !important",
+        minWidth: "auto",
 
         "&:hover": {
           boxShadow: "none",
+        },
+
+        [`& .${buttonClasses.startIcon}`]: {
+          marginLeft: 0,
         },
       },
     },

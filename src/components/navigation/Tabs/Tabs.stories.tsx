@@ -3,8 +3,7 @@ import { Meta } from "@storybook/react";
 import TabsUI from "./Tabs";
 import { iTabsProps } from "./types";
 import Tab from "./Tab";
-import { Text } from "../../core";
-import { Col } from "../../layout";
+import { Col, Text } from "../../core";
 
 export default {
   title: "Components/Navigation",

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { TableRow } from "@mui/material";
 import { pxToRem } from "../../../styles";
-import { Row } from "../../layout";
+import { Row } from "../../core";
 
 export const TableFooter = styled(Row)<{ stickyFooter?: boolean }>(
   ({ theme: { palette }, stickyFooter }) => ({

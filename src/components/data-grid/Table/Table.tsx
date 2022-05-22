@@ -7,8 +7,7 @@ import {
 import clsx from "clsx";
 import * as React from "react";
 import { SortIcon } from "../../../assets/icons";
-import { Text } from "../../core";
-import { Col, Row } from "../../layout";
+import { Col, Row, Text } from "../../core";
 import TableCell from "./TableCell";
 import TableRow from "./TableRow";
 import TablePagination from "./TablePagination";

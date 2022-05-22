@@ -6,8 +6,7 @@ import useStepperState from "./useStepperState";
 import Step from "./Step";
 import StepIcon from "./StepIcon";
 import StepLabel from "./StepLabel";
-import { Text, Button } from "../../core";
-import { Col, Row } from "../../layout";
+import { Col, Row, Text, Button } from "../../core";
 
 export default {
   title: "Components/Navigation",

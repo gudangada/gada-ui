@@ -4,7 +4,7 @@ import TimeFieldUI from "./TimeField";
 import { iTimeFieldProps } from "./types";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: TimeFieldUI,
 } as Meta;
 

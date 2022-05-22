@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Meta } from "@storybook/react";
 import DashboardLayoutUI from "./DashboardLayout";
-import { Col } from "../Col";
+import { Col } from "../../core/Col";
 import { HomeIcon, CampaignIcon } from "../../../assets";
 import { iDashboardNavItems } from "./types";
 import { Link } from "@mui/material";

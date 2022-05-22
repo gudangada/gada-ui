@@ -2,11 +2,10 @@ import * as React from "react";
 import { Meta, Story } from "@storybook/react";
 import DateTimeFieldUI from "./DateTimeField";
 import { iDateTimeFieldProps } from "./types";
-import { Col, Row } from "../../layout";
-import { Text } from "../../core";
+import { Col, Row, Text } from "../../core";
 
 export default {
-  title: "Components/Inputs",
+  title: "Components/Input",
   component: DateTimeFieldUI,
 } as Meta;
 
