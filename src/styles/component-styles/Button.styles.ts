@@ -70,10 +70,7 @@ export const Button: ThemeOptions["components"] = {
       text: {
         boxShadow: "none",
         padding: "0px !important",
-
-        [`& .${typographyClasses.root}`]: {
-          color: Palette.interface.teal["500"],
-        },
+        minWidth: "auto",
 
         "&:hover": {
           boxShadow: "none",

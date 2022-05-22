@@ -7,7 +7,7 @@ import ComponentStyles, {
 } from "./component-styles";
 import "@emotion/react";
 
-export const themeOptions: ThemeOptions = {
+export const themeOptions = {
   palette: Palette,
   shadows: Shadows,
   typography: Typography,
