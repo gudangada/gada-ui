@@ -42,6 +42,7 @@ const PaletteItem: React.VFC<iPaletteItemProps> = ({ colorKey, color }) => {
             width: 50,
             height: 25,
             borderRadius: 2,
+            cursor: "pointer",
           }}
         />
       </TableCell>
