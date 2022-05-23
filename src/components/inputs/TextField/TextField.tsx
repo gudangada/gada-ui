@@ -42,7 +42,16 @@ const TextField: React.VFC<iTextFieldProps> = ({
     if (!allowDecimal) {
       val = NumberUtils.getNonDecimalNumber(val);
     }
-    return onChange?.({ ...evt, target: { ...evt.target, value: val } });
+
+    return onChange?.({
+      ...evt,
+      target: {
+        ...evt.target,
+        name: evt.target.name,
+        inputMode: evt.target.inputMode,
+        value: val,
+      },
+    });
   };
 
   return (
