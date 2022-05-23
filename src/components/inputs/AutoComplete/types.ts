@@ -4,10 +4,9 @@ export interface iAutoCompleteProps<
   T,
   Multiple extends boolean | undefined = undefined,
   DisableClearable extends boolean | undefined = undefined,
-  FreeSolo extends boolean | undefined = undefined,
-  ChipComponent extends React.ElementType = ChipTypeMap["defaultComponent"]
+  FreeSolo extends boolean | undefined = undefined
 > extends Omit<
-    AutocompleteProps<T, Multiple, DisableClearable, FreeSolo, ChipComponent>,
+    AutocompleteProps<T, Multiple, DisableClearable, FreeSolo>,
     "renderInput"
   > {
   label?: string;
