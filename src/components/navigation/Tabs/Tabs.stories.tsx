@@ -4,17 +4,21 @@ import TabsUI from "./Tabs";
 import { iTabsProps } from "./types";
 import Tab from "./Tab";
 import { Col, Text } from "../../core";
+import { ExampleSection } from "../../../story-components";
 
 export default {
   title: "Components/Navigation",
   component: TabsUI,
 } as Meta<iTabsProps>;
 
-const TabsNavigation = [
-  { label: "Rangkuman" },
-  { label: "Redemptions" },
-  { label: "Promotion Items" },
-];
+const TabsNavigation = Array(30)
+  .fill(0)
+  .map((_, index) => ({
+    label:
+      index % 2 === 0
+        ? `Tab ${index + 1}`
+        : `Tabwithaverylongnamethatshouldbetrimmed ${index + 1}`,
+  }));
 
 const TabContent: React.FC<{ index: number; activeTab: number }> = ({
   index,
@@ -38,24 +42,27 @@ export const Tabs: React.VFC<iTabsProps> = () => {
   );
 
   return (
-    <Col>
-      <TabsUI
-        value={activeTab}
-        onChange={handleChange}
-        aria-label="Tabs-Example"
-      >
-        {TabsNavigation.map((tab) => (
-          <Tab
-            id={`tab-${tab.label}`}
-            key={tab.label}
-            label={tab.label}
-            wrapped
-          />
+    <ExampleSection title="Scrollable Tabs">
+      <Col>
+        <TabsUI
+          value={activeTab}
+          onChange={handleChange}
+          aria-label="Tabs-Example"
+          variant="scrollable"
+        >
+          {TabsNavigation.map((tab) => (
+            <Tab
+              id={`tab-${tab.label}`}
+              key={tab.label}
+              label={tab.label}
+              wrapped
+            />
+          ))}
+        </TabsUI>
+        {TabsNavigation.map((_, index) => (
+          <TabContent activeTab={activeTab} index={index} />
         ))}
-      </TabsUI>
-      {TabsNavigation.map((_, index) => (
-        <TabContent activeTab={activeTab} index={index} />
-      ))}
-    </Col>
+      </Col>
+    </ExampleSection>
   );
 };

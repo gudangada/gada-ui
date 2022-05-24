@@ -110,3 +110,9 @@ yarn storybook
 - Get that PR approved
 - Merge the PR to `develop` (with a meaningful message - can use PR's title)
 - Don't forget to keep updating your linear ticket's status
+
+## TODOs
+
+- Responsive components
+- Unit Testing
+- Gradually replace material-ui with custom components to remove dependencies

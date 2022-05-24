@@ -1,11 +1,14 @@
 import * as React from "react";
-import { Tab as MuiTab } from "@mui/material";
 import { iTabProps } from "./types";
-import { Text } from "../../core";
+import { StyledTab, TabLabel } from "./styles";
 
-const Tab: React.FC<iTabProps> = ({ label, ...props }) => {
+const Tab: React.FC<iTabProps> = ({ label, maxWidth = 120, ...props }) => {
   return (
-    <MuiTab {...props} label={<Text variant="bodySemiBold">{label}</Text>} />
+    <StyledTab
+      maxWidth={maxWidth}
+      {...props}
+      label={<TabLabel variant="bodySemiBold">{label}</TabLabel>}
+    />
   );
 };
 
