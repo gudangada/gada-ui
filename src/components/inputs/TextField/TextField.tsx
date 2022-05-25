@@ -86,7 +86,10 @@ const TextField: React.VFC<iTextFieldProps> = ({
           }
           inputProps={{
             name,
-            value: inputValue,
+            value:
+              type === "number" && inputValue
+                ? NumberUtils.numberFormatter(inputValue as string)
+                : inputValue,
             inputMode,
             onBlur,
             ...inputProps,
