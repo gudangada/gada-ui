@@ -39,6 +39,12 @@ const TextField: React.VFC<iTextFieldProps> = ({
 
   const onChangeText: iTextFieldProps["onChange"] = (evt) => {
     let val = evt.target.value;
+
+    val =
+      type === "number" && val
+        ? NumberUtils.numberFormatter(val as string)
+        : val;
+
     if (!allowDecimal) {
       val = NumberUtils.getNonDecimalNumber(val);
     }
@@ -80,10 +86,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
           }
           inputProps={{
             name,
-            value:
-              type === "number" && inputValue
-                ? NumberUtils.numberFormatter(inputValue as string)
-                : inputValue,
+            value: inputValue,
             inputMode,
             onBlur,
             ...inputProps,

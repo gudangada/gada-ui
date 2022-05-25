@@ -4,6 +4,47 @@
 
 A component library based on Gada Design System
 
+# Usage
+
+- Login to your npm account from npm cli.
+  - Make sure you are a member of DS npm package.
+- Install npm package to your project:
+
+```
+  // NPM
+  npm install @gudangada/design-system
+
+  // Yarn
+  yarn add @gudangada/design-system
+```
+
+- Install `Inter` fonts from [@fontsource/inter](https://www.npmjs.com/package/@fontsource/inter)
+- Add imports to your `_app.tsx`:
+
+```
+import "@fontsource/inter";
+import * as React from "react";
+import { ThemeProvider } from "@gudangada/design-system";
+const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Head>
+        <title>GudangAda - Project</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  );
+};
+
+export default MyApp;
+```
+
 ## File Organization
 
 - `src/components` : used for all the react components
@@ -72,7 +113,12 @@ git checkout -b feature/GUD-ticket-number-feature-name
 
 ## Publish to NPM
 
-Will update it later
+- Draft a new GitHub release by providing correct version as tag and release title.
+  - Naming convention for tag and title should follow `v{version_number}`.
+- Auto generate release notes
+  - Release notes are auto generated from the PRs that are merged since the last release
+- Press `Publish release` button. This will trigger Github action to publish the release to [NPM](https://www.npmjs.com/package/@gudangada/design-system).
+  - Release action is defined in `npm-publish.yml` workflow file
 
 ## Contribution
 
@@ -116,3 +162,15 @@ yarn storybook
 - Responsive components
 - Unit Testing
 - Gradually replace material-ui with custom components to remove dependencies
+
+### Troubleshoot
+
+- In case you run into type error from `styled` not recognizing the theme fully, add `index.d.ts` file to your root repo and add following lines to it:
+
+```
+import { AppTheme } from "@gudangada/design-system";
+
+declare module "@emotion/react" {
+  export interface Theme extends AppTheme {}
+}
+```
