@@ -80,7 +80,7 @@ export const TextField: React.VFC = () => {
         id="example-number-field"
         name="Example Number Field with Decimal"
         value={values[6]}
-        label="Number Field"
+        label="Number Field (Decimal)"
         onChange={handleChange(6)}
         type="number"
         allowDecimal
