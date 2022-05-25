@@ -3,6 +3,7 @@ import { iChipProps } from "./types";
 import { StyledChip } from "./styles";
 
 const Chip: React.FC<iChipProps> = ({
+  variant = "outlined",
   clickable,
   onClick = undefined,
   onDelete = undefined,
@@ -11,6 +12,7 @@ const Chip: React.FC<iChipProps> = ({
 }) => {
   return (
     <StyledChip
+      variant={variant}
       clickable={clickable}
       onClick={!clickable ? undefined : onClick}
       onDelete={disabled ? undefined : onDelete}
