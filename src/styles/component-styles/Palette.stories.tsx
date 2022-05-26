@@ -7,8 +7,13 @@ import {
   TableRow,
   TableCell,
   CopyToClipboardButton,
+  Col,
+  Text,
+  Alert,
 } from "../../components";
 import { ObjectUtils } from "../../utils";
+import { HighlightedText } from "../../story-components/HighlightedText";
+import { linkTo } from "@storybook/addon-links";
 
 export default {
   title: "Global/Palette",
@@ -34,9 +39,10 @@ const PaletteItem: React.VFC<iPaletteItemProps> = ({ colorKey, color }) => {
           readOnly
           value={color}
           style={{
-            width: 25,
+            width: 50,
             height: 25,
             borderRadius: 2,
+            cursor: "pointer",
           }}
         />
       </TableCell>
@@ -59,14 +65,29 @@ export const Palette: React.VFC = () => {
   };
 
   return (
-    <Table
-      tableHeadingCells={[
-        { id: "color-key", content: "Palette Key" },
-        { id: "color-code", content: "Color HEX" },
-        { id: "color", content: "Color" },
-      ]}
-      data={keys}
-      renderTableItem={renderPaletteItem}
-    />
+    <Col spacing={32}>
+      <Col spacing={16}>
+        <Text variant="bodySemiBold">
+          The Gada palette exposes following colors that you can use to
+          customize your components.
+        </Text>
+        <Alert variant="standard" severity="info">
+          <HighlightedText
+            text="You can use Key value to set color of the Text component by passing it to color prop of Text component."
+            highlight={["Key", "Text"]}
+            links={[() => {}, linkTo("components-core--text")]}
+          />
+        </Alert>
+      </Col>
+      <Table
+        tableHeadingCells={[
+          { id: "color-key", content: "Key" },
+          { id: "color-code", content: "HEX" },
+          { id: "color", content: "Color" },
+        ]}
+        data={keys}
+        renderTableItem={renderPaletteItem}
+      />
+    </Col>
   );
 };

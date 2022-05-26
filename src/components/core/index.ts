@@ -7,3 +7,4 @@ export * from "./Card";
 export * from "./Col";
 export * from "./Row";
 export * from "./Divider";
+export * from "./Chip";

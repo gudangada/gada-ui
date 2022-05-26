@@ -2,7 +2,6 @@ import * as React from "react";
 import { iAutoCompleteProps } from "./types";
 import {
   Autocomplete as MuiAutocomplete,
-  ChipTypeMap,
   CircularProgress,
   TextField,
 } from "@mui/material";
@@ -16,8 +15,7 @@ const AutoComplete = <
   T,
   Multiple extends boolean | undefined,
   DisableClearable extends boolean | undefined,
-  FreeSolo extends boolean | undefined,
-  ChipComponent extends React.ElementType = ChipTypeMap["defaultComponent"]
+  FreeSolo extends boolean | undefined
 >({
   placeholder = "Select",
   errorText,
@@ -30,13 +28,7 @@ const AutoComplete = <
   loading,
   disableClearable = true,
   ...props
-}: iAutoCompleteProps<
-  T,
-  Multiple,
-  DisableClearable,
-  FreeSolo,
-  ChipComponent
->) => {
+}: iAutoCompleteProps<T, Multiple, DisableClearable, FreeSolo>) => {
   const [selectedValue, setSelectedValue] = React.useState(value);
   const selectedValueRef = React.useRef(selectedValue);
   const [curInputValue, setInputValue] = React.useState(inputValue);

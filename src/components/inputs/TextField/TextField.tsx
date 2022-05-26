@@ -39,10 +39,25 @@ const TextField: React.VFC<iTextFieldProps> = ({
 
   const onChangeText: iTextFieldProps["onChange"] = (evt) => {
     let val = evt.target.value;
+
+    val =
+      type === "number" && val
+        ? NumberUtils.numberFormatter(val as string)
+        : val;
+
     if (!allowDecimal) {
       val = NumberUtils.getNonDecimalNumber(val);
     }
-    return onChange?.({ ...evt, target: { ...evt.target, value: val } });
+
+    return onChange?.({
+      ...evt,
+      target: {
+        ...evt.target,
+        name: evt.target.name,
+        inputMode: evt.target.inputMode,
+        value: val,
+      },
+    });
   };
 
   return (

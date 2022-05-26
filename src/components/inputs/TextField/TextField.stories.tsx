@@ -3,14 +3,18 @@ import { Meta } from "@storybook/react";
 import TextFieldUI from "./TextField";
 import { Col } from "../../core";
 import { EditIcon, PlusIcon } from "../../../assets";
+import { iTextFieldProps } from "./types";
 
 export default {
   title: "Components/Input",
   component: TextFieldUI,
-} as Meta;
+  args: {
+    value: "16000",
+  },
+} as Meta<iTextFieldProps>;
 
-export const TextField: React.VFC = () => {
-  const [values, setValues] = React.useState<any[]>([]);
+export const TextField: React.VFC<iTextFieldProps> = (props) => {
+  const [values, setValues] = React.useState<any[]>([, , , , , props.value]);
 
   const handleChange =
     (index: number) =>
@@ -80,7 +84,7 @@ export const TextField: React.VFC = () => {
         id="example-number-field"
         name="Example Number Field with Decimal"
         value={values[6]}
-        label="Number Field"
+        label="Number Field (Decimal)"
         onChange={handleChange(6)}
         type="number"
         allowDecimal
