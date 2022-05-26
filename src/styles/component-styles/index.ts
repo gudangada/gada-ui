@@ -20,6 +20,7 @@ import { Autocomplete } from "./Autocomplete.styles";
 import { Dialog } from "./Dialog.styles";
 import { Alert } from "./Alert.styles";
 import { Chip } from "./Chip.styles";
+import { Loaders } from "./Loaders.styles";
 
 export default merge(
   CssBaseline,
@@ -37,5 +38,6 @@ export default merge(
   Autocomplete,
   Dialog,
   Alert,
-  Chip
+  Chip,
+  Loaders
 );
