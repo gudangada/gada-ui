@@ -16,17 +16,26 @@ const DateField: React.FC<iDateFieldProps<any>> = ({
   error = false,
   label,
   onChange,
+  disabled = false,
   ...restDatePickerProps
 }) => {
-  const [showDatePicker, setDatePickerVisible] = React.useState(false);
+  const [datePickerVisible, setDatePickerVisible] = React.useState(false);
   const textFieldRef = React.useRef();
+
+  const showDatePicker = () => {
+    setDatePickerVisible(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisible(false);
+  };
 
   const handleChange: BasePickerProps<any, any>["onChange"] = (
     date,
     keyboardInputValue
   ) => {
     onChange(date, keyboardInputValue);
-    setDatePickerVisible(false);
+    hideDatePicker;
   };
 
   return (
@@ -34,19 +43,26 @@ const DateField: React.FC<iDateFieldProps<any>> = ({
       <Label id={id}>{label}</Label>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DatePicker
-          open={showDatePicker}
-          onClose={() => setDatePickerVisible(false)}
+          open={datePickerVisible}
+          onClose={hideDatePicker}
           value={value}
           renderInput={({ inputProps }) => (
             <TextField
               inputRef={textFieldRef}
-              inputProps={{ ...inputProps, onChange: () => {} }}
+              inputProps={{
+                ...inputProps,
+                onChange: () => {},
+              }}
               errorText={errorText}
               error={error}
               EndIcon={CalendarIcon}
               onChange={() => {}}
-              onClick={() => setDatePickerVisible(true)}
-              classes={{ input: "pointer-events-none", root: "cursor-pointer" }}
+              onClick={showDatePicker}
+              classes={{
+                input: "pointer-events-none",
+                root: disabled ? "cursor-default" : "cursor-pointer",
+              }}
+              disabled={disabled}
             />
           )}
           PopperProps={{
@@ -54,6 +70,7 @@ const DateField: React.FC<iDateFieldProps<any>> = ({
           }}
           onChange={handleChange}
           inputFormat={inputFormat}
+          disabled={disabled}
           {...restDatePickerProps}
         />
       </LocalizationProvider>

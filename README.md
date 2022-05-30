@@ -7,7 +7,7 @@ A component library based on Gada Design System
 # Usage
 
 - Login to your npm account from npm cli.
-  - Make sure you are a member of DS npm package.
+  - Make sure you are a member of DS npm project.
 - Install npm package to your project:
 
 ```
@@ -44,6 +44,8 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
 
 export default MyApp;
 ```
+- For deployment, you need to add `NPM_TOKEN` environment variable to your project. You can get the token from npm project dashboard.
+
 
 ## File Organization
 
