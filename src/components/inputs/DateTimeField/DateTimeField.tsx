@@ -18,6 +18,7 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
   timeFieldProps,
   onChange,
   errorText,
+  disabled = false,
 }) => {
   const [date, setDate] = React.useState<string>("");
   const [time, setTime] = React.useState<string>("");
@@ -98,6 +99,7 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
             value={date}
             error={Boolean(errorText)}
             onChange={onChangeDate}
+            disabled={dateFieldProps?.disabled || disabled}
           />
         </div>
         <div style={{ flex: 0.3 }}>
@@ -107,6 +109,7 @@ const DateTimeField: React.VFC<iDateTimeFieldProps<any>> = ({
             value={time}
             error={Boolean(errorText)}
             onChange={onChangeTime}
+            disabled={timeFieldProps?.disabled || disabled}
           />
         </div>
       </Row>
