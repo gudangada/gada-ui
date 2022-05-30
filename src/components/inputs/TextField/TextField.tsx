@@ -31,6 +31,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
   inputProps,
   type,
   allowDecimal = false,
+  onClick,
   ...outlinedInputProps
 }) => {
   const isError = Boolean(errorText) || error;
@@ -97,6 +98,9 @@ const TextField: React.VFC<iTextFieldProps> = ({
           onChange={onChangeText}
           error={isError}
           classes={classes}
+          onClick={(evt) => {
+            if (!disabled) onClick?.(evt);
+          }}
           {...outlinedInputProps}
         />
         {showHelperText && (

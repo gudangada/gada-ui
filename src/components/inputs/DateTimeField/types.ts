@@ -11,4 +11,5 @@ export interface iDateTimeFieldProps<T> {
   dateTimeSeparator?: string;
   onChange: (dateTime: string) => void;
   errorText?: string;
+  disabled?: boolean;
 }
