@@ -20,7 +20,14 @@ export interface iTextFieldProps
   formControlProps?: FormControlProps;
   formHelperTextProps?: FormHelperTextProps;
   allowDecimal?: boolean;
+  filterRegExps?: TextFieldRegExpType[];
   handleBlur?: (
     event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
 }
+
+export type TextFieldRegExpType = {
+  regExp: string;
+  regExpParams?: string[];
+  replaceParam?: string;
+};
