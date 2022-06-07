@@ -32,11 +32,13 @@ const TextField: React.VFC<iTextFieldProps> = ({
   type,
   allowDecimal = false,
   onClick,
+  filterRegExps,
   ...outlinedInputProps
 }) => {
   const isError = Boolean(errorText) || error;
   const showHelperText = helperText !== undefined && helperText !== errorText;
   const inputValue = value ?? defaultValue;
+  const isDecimalAllowed = type === "number" ? allowDecimal : true;
 
   const onChangeText: iTextFieldProps["onChange"] = (evt) => {
     let val = evt.target.value;
@@ -46,8 +48,17 @@ const TextField: React.VFC<iTextFieldProps> = ({
         ? NumberUtils.numberFormatter(val as string)
         : val;
 
-    if (!allowDecimal) {
+    if (!isDecimalAllowed) {
       val = NumberUtils.getNonDecimalNumber(val);
+    }
+
+    if (filterRegExps && filterRegExps.length) {
+      filterRegExps.forEach((regexp) => {
+        val = val.replace(
+          new RegExp(regexp.regExp, ...(regexp.regExpParams || [])),
+          regexp.replaceParam || ""
+        );
+      });
     }
 
     return onChange?.({
