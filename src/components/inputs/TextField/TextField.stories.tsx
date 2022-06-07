@@ -4,6 +4,7 @@ import TextFieldUI from "./TextField";
 import { Col } from "../../core";
 import { EditIcon, PlusIcon } from "../../../assets";
 import { iTextFieldProps } from "./types";
+import { TextFieldRegExp } from "./constants";
 
 export default {
   title: "Components/Input",
@@ -46,6 +47,7 @@ export const TextField: React.VFC<iTextFieldProps> = (props) => {
         errorText="Helper text"
         ErrorTextIcon={PlusIcon}
         onChange={handleChange(1)}
+        filterRegExps={[TextFieldRegExp.noSpecialChars]}
       />
       <TextFieldUI
         id="example-text-field"
