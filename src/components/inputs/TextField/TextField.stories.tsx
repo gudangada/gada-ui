@@ -47,7 +47,7 @@ export const TextField: React.VFC<iTextFieldProps> = (props) => {
         errorText="Helper text"
         ErrorTextIcon={PlusIcon}
         onChange={handleChange(1)}
-        filterRegExps={[TextFieldRegExp.noSpecialChars]}
+        filterRegExps={[TextFieldRegExp.allowCommaOnly]}
       />
       <TextFieldUI
         id="example-text-field"
