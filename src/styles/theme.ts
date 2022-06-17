@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import ComponentStyles, {
   Palette,
   Typography,
@@ -21,5 +21,5 @@ declare module "@emotion/react" {
   export interface Theme extends AppTheme {}
 }
 
-export { zIndex, theme };
+export { zIndex, theme, Palette };
 export default theme;
