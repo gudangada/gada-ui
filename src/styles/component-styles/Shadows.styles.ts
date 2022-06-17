@@ -2,7 +2,7 @@ import { Shadows as ShadowsType } from "@mui/material/styles/shadows";
 
 const shadowsOverride = [
   "none",
-  ...Array(20)
+  ...Array(25)
     .fill("none")
     .map(
       (_, index) =>
