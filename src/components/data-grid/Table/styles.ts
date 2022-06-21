@@ -16,11 +16,12 @@ export const TableFooter = styled(Row)<{ stickyFooter?: boolean }>(
 );
 
 export const StyledTableRow = styled(TableRow)<{ isClickable: boolean }>(
-  ({ theme: { palette }, isClickable }) => ({
+  ({ theme: { palette }, isClickable, hover }) => ({
     "&:hover": {
-      backgroundColor: !isClickable
-        ? "transparent !important"
-        : palette.interface.black[50],
+      backgroundColor:
+        hover || isClickable
+          ? palette.interface.black[50]
+          : "transparent !important",
       cursor: !isClickable ? "default !important" : "pointer",
     },
   })
