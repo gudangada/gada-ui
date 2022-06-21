@@ -1,9 +1,10 @@
-import { TableCell, TableRow } from "@mui/material";
 import { Meta } from "@storybook/react";
 import { orderBy } from "lodash";
 import * as React from "react";
 import { Text } from "../../core";
 import Table from "./Table";
+import TableRow from "./TableRow";
+
 import {
   Order,
   iTableHeadingCell,
@@ -14,7 +15,12 @@ import {
 export default {
   title: "Components/Data Grid",
   component: Table,
-} as Meta;
+  args: {
+    tableRowProps: {
+      hover: true,
+    },
+  },
+} as Meta<iTableProps>;
 
 interface iFood {
   id: string;
@@ -25,7 +31,9 @@ interface iFood {
   protein: number;
 }
 
-export const SimpleTable: React.VFC<iTableProps<iFood>> = () => {
+export const SimpleTable: React.VFC<iTableProps<iFood>> = ({
+  tableRowProps,
+}) => {
   const tableHeadingCells: iTableHeadingCell[] = [
     { id: "name", content: "Dessert (100g serving)" },
     { id: "calories", content: "Calories" },
@@ -79,22 +87,16 @@ export const SimpleTable: React.VFC<iTableProps<iFood>> = () => {
 
   const renderRow: iRenderTableRowItemHandler<iFood> = (row) => {
     return (
-      <TableRow key={row.id}>
-        <TableCell>
-          <Text variant="bodyRegular">{row.name}</Text>
-        </TableCell>
-        <TableCell>
-          <Text variant="bodyRegular">{row.calories}</Text>
-        </TableCell>
-        <TableCell>
-          <Text variant="bodyRegular">{row.fat}</Text>
-        </TableCell>
-        <TableCell>
-          <Text variant="bodyRegular">{row.carbs}</Text>
-        </TableCell>
-        <TableCell>
-          <Text variant="bodyRegular">{row.protein}</Text>
-        </TableCell>
+      <TableRow {...tableRowProps} key={row.id}>
+        {() => (
+          <>
+            <Text variant="bodyRegular">{row.name}</Text>
+            <Text variant="bodyRegular">{row.calories}</Text>
+            <Text variant="bodyRegular">{row.fat}</Text>
+            <Text variant="bodyRegular">{row.carbs}</Text>
+            <Text variant="bodyRegular">{row.protein}</Text>
+          </>
+        )}
       </TableRow>
     );
   };
@@ -108,7 +110,9 @@ export const SimpleTable: React.VFC<iTableProps<iFood>> = () => {
   );
 };
 
-export const SortableTable: React.VFC<iTableProps<iFood>> = () => {
+export const SortableTable: React.VFC<iTableProps<iFood>> = ({
+  tableRowProps,
+}) => {
   const [rows, setRows] = React.useState<iFood[]>([
     {
       id: "Cupcake",
@@ -258,12 +262,16 @@ export const SortableTable: React.VFC<iTableProps<iFood>> = () => {
 
   const renderRow: iRenderTableRowItemHandler<iFood> = (row) => {
     return (
-      <TableRow key={row.id}>
-        <TableCell>{row.name}</TableCell>
-        <TableCell>{row.calories}</TableCell>
-        <TableCell>{row.fat}</TableCell>
-        <TableCell>{row.carbs}</TableCell>
-        <TableCell>{row.protein}</TableCell>l
+      <TableRow {...tableRowProps} key={row.id}>
+        {() => (
+          <>
+            <Text variant="bodyRegular">{row.name}</Text>
+            <Text variant="bodyRegular">{row.calories}</Text>
+            <Text variant="bodyRegular">{row.fat}</Text>
+            <Text variant="bodyRegular">{row.carbs}</Text>
+            <Text variant="bodyRegular">{row.protein}</Text>
+          </>
+        )}
       </TableRow>
     );
   };
