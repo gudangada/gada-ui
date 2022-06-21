@@ -4,7 +4,7 @@ export const TextFieldRegExp = {
     params: ["gi"],
   },
   allowCommaOnly: {
-    regExp: "[^\\w\\s],",
+    regExp: "[^\\w\\s,]",
     params: ["gi"],
   },
 };
