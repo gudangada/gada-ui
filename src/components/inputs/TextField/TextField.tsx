@@ -33,6 +33,8 @@ const TextField: React.VFC<iTextFieldProps> = ({
   allowDecimal = false,
   onClick,
   filterRegExps,
+  multiline = false,
+  outlinedInputClassName,
   ...outlinedInputProps
 }) => {
   const isError = Boolean(errorText) || error;
@@ -112,6 +114,12 @@ const TextField: React.VFC<iTextFieldProps> = ({
           onClick={(evt) => {
             if (!disabled) onClick?.(evt);
           }}
+          type={type}
+          multiline={type === "textarea" || multiline}
+          className={clsx(
+            type === "textarea" ? "h-auto max-h-full" : undefined,
+            outlinedInputClassName
+          )}
           {...outlinedInputProps}
         />
         {showHelperText && (
