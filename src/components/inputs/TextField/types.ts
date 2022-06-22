@@ -24,6 +24,7 @@ export interface iTextFieldProps
   handleBlur?: (
     event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
+  outlinedInputClassName?: string;
 }
 
 export type TextFieldRegExpType = {
