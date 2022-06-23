@@ -1,9 +1,10 @@
-import { FormControl, OutlinedInput, InputAdornment } from "@mui/material";
+import { FormControl, InputAdornment } from "@mui/material";
 import clsx from "clsx";
 import * as React from "react";
 import { NumberUtils } from "../../../utils";
 import { FormHelperText } from "../FormHelperText";
 import { Label } from "../Label";
+import { StyledOutlinedInput } from "./styles";
 import { iTextFieldProps } from "./types";
 
 const TextField: React.VFC<iTextFieldProps> = ({
@@ -82,7 +83,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
         <Label className={clsx(labelInline ? "mr-2" : "mb-2")}>{label}</Label>
       )}
       <FormControl error={isError} {...formControlProps} disabled={disabled}>
-        <OutlinedInput
+        <StyledOutlinedInput
           id={id}
           startAdornment={
             StartIcon && (
