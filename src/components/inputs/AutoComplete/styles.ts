@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
+import { outlinedInputClasses } from "@mui/material";
 import { Col } from "../../core";
 
 export const StyledAutoCompleteContainer = styled(Col)<{ isError?: boolean }>(
   ({ theme: { palette }, isError }) => ({
-    "& .MuiOutlinedInput-notchedOutline": {
+    [`& .${outlinedInputClasses.notchedOutline}`]: {
       borderColor: isError
         ? palette.interface.red[500]
         : palette.interface.black[200],
+    },
+
+    [`& .${outlinedInputClasses.root}`]: {
+      alignItems: "center !important",
     },
   })
 );
