@@ -6,6 +6,7 @@ export const Input: ThemeOptions["components"] = {
   MuiInputBase: {
     styleOverrides: {
       root: {
+        alignItems: "flex-start",
         color: Palette.interface.black[500],
         height: pxToRem(48),
         minHeight: pxToRem(48),
