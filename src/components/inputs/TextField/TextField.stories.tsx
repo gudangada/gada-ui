@@ -114,6 +114,7 @@ export const TextField: React.VFC<iTextFieldProps> = (props) => {
         value={values[7]}
         label="Text area"
         onChange={handleChange(7)}
+        StartIcon={EditIcon}
         type="textarea"
       />
     </Col>
