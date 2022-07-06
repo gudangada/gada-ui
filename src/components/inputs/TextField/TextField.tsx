@@ -115,7 +115,7 @@ const TextField: React.VFC<iTextFieldProps> = ({
           onClick={(evt) => {
             if (!disabled) onClick?.(evt);
           }}
-          type={type}
+          fieldType={type}
           multiline={type === "textarea" || multiline}
           className={clsx(
             type === "textarea" ? "h-auto max-h-full" : undefined,

@@ -1,9 +1,15 @@
 import styled from "@emotion/styled";
-import { OutlinedInput, outlinedInputClasses } from "@mui/material";
+import {
+  OutlinedInput,
+  outlinedInputClasses,
+  OutlinedInputProps,
+} from "@mui/material";
 
-export const StyledOutlinedInput = styled(OutlinedInput)(({ type }) => ({
+export const StyledOutlinedInput = styled(OutlinedInput)<{
+  fieldType: OutlinedInputProps["type"];
+}>(({ fieldType }) => ({
   [`&.${outlinedInputClasses.root}`]: {
-    ...(type === "textarea"
+    ...(fieldType === "textarea"
       ? {
           overflow: "hidden",
 
