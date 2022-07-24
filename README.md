@@ -11,20 +11,16 @@ A component library based on Gada Design System
 - Install npm package to your project:
 
 ```
-  // NPM
   npm install @gudangada/design-system
-
-  // Yarn
-  yarn add @gudangada/design-system
 ```
 
-- Install `Inter` fonts from [@fontsource/inter](https://www.npmjs.com/package/@fontsource/inter)
 - Add imports to your `_app.tsx`:
 
 ```
 import "@fontsource/inter";
 import * as React from "react";
 import { ThemeProvider } from "@gudangada/design-system";
+
 const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
@@ -44,8 +40,8 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => {
 
 export default MyApp;
 ```
-- For deployment, you need to add `NPM_TOKEN` environment variable to your project. You can get the token from npm project dashboard.
 
+- For deployment, you need to add `NPM_TOKEN` environment variable to your project. You can get the token from npm project dashboard.
 
 ## File Organization
 
