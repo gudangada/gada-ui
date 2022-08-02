@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { outlinedInputClasses } from "@mui/material";
-import { Col } from "../../core";
+import { Col } from "../../core/Col";
 
 export const StyledAutoCompleteContainer = styled(Col)<{ isError?: boolean }>(
   ({ theme: { palette }, isError }) => ({
