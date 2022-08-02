@@ -19,7 +19,7 @@ const Menu: React.FC<iMenuProps> = ({
         vertical: "top",
         horizontal: "center",
       }}
-      BackdropProps={{ style: { backgroundColor: "rgba(0,0,0,0.001)" } }}
+      BackdropProps={{ style: { opacity: 0.01 } }}
       PaperProps={{ elevation: 1 }}
       {...menuProps}
       onClose={handleClose}
