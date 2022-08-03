@@ -8,3 +8,4 @@ export * from "./Col";
 export * from "./Row";
 export * from "./Divider";
 export * from "./Chip";
+export * from "./FilterButton";

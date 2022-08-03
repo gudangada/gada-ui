@@ -24,6 +24,7 @@ const Template: Story<iSearchbarProps> = (props) => {
   return (
     <SearchbarUI
       {...props}
+      label="Search label"
       value={value}
       onChangeValue={handleChange}
       onClickCancel={handleReset}

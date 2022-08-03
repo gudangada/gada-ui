@@ -18,5 +18,6 @@ export { default as LogoutIcon } from "./LogoutIcon";
 export { default as CampaignIcon } from "./CampaignIcon";
 export { default as RedemptionIcon } from "./RedemptionIcon";
 export { default as SettingsIcon } from "./SettingsIcon";
+export { default as FilterIcon } from "./FilterIcon";
 export * from "./ExpandIcon";
 export * from "./types";

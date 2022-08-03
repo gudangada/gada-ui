@@ -1,6 +1,8 @@
 import { Box, FormControl, IconButton, InputAdornment } from "@mui/material";
 import * as React from "react";
 import { CrossCircleIcon, SearchIcon } from "../../../assets";
+import { Label } from "../../inputs";
+import { Col } from "../Col";
 import { StyledOutlinedInput } from "./styles";
 import { iSearchbarProps } from "./types";
 
@@ -11,6 +13,7 @@ const Searchbar: React.VFC<iSearchbarProps> = (props) => {
     onClickCancel,
     onChangeValue,
     size = "default",
+    label,
     ...rest
   } = props;
 
@@ -24,32 +27,35 @@ const Searchbar: React.VFC<iSearchbarProps> = (props) => {
   };
 
   return (
-    <FormControl variant="outlined" {...formControlProps}>
-      <StyledOutlinedInput
-        {...rest}
-        size={size === "default" ? undefined : "small"}
-        onChange={(event) => onChangeValue(event.target.value)}
-        startAdornment={
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        }
-        inputRef={inputRef}
-        endAdornment={
-          withEndAdornment && (
-            <InputAdornment position="end" style={{ paddingRight: 0 }}>
-              {props.value ? (
-                <IconButton onClick={handleClickCancel}>
-                  <CrossCircleIcon />
-                </IconButton>
-              ) : (
-                <Box width={48} />
-              )}
+    <Col spacing={8}>
+      {label && <Label>{label}</Label>}
+      <FormControl variant="outlined" {...formControlProps}>
+        <StyledOutlinedInput
+          {...rest}
+          size={size === "default" ? undefined : "small"}
+          onChange={(event) => onChangeValue(event.target.value)}
+          startAdornment={
+            <InputAdornment position="start">
+              <SearchIcon />
             </InputAdornment>
-          )
-        }
-      />
-    </FormControl>
+          }
+          inputRef={inputRef}
+          endAdornment={
+            withEndAdornment && (
+              <InputAdornment position="end" style={{ paddingRight: 0 }}>
+                {props.value ? (
+                  <IconButton onClick={handleClickCancel}>
+                    <CrossCircleIcon />
+                  </IconButton>
+                ) : (
+                  <Box width={48} />
+                )}
+              </InputAdornment>
+            )
+          }
+        />
+      </FormControl>
+    </Col>
   );
 };
 

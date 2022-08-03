@@ -10,6 +10,6 @@ export interface iMenuItemProps {
 }
 
 export interface iMenuProps extends MenuProps {
-  menuItems: iMenuItemProps[];
+  menuItems?: iMenuItemProps[];
   handleClose: VoidFunction;
 }
