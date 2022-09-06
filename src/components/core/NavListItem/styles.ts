@@ -14,6 +14,12 @@ export const StyledListItemButton = styled(ListItemButton)<
   "&:hover": {
     backgroundColor: palette.overlay.teal,
   },
+
+  ...(isSubNavItem
+    ? {
+        paddingLeft: `${pxToRem(28)} !important`,
+      }
+    : {}),
 }));
 
 export const StyledActiveIndicatorContainer = styled.div<

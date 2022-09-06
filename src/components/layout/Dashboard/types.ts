@@ -10,6 +10,7 @@ export interface iDashboardProps {
   activePathname: string;
   dashboardBaseUrl: string;
   stickyBottomFooter?: React.ReactNode;
+  header?: React.ReactNode;
   children: React.ReactNode;
   contentContainerClassName?: string;
 }

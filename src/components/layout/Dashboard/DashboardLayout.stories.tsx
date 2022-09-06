@@ -2,9 +2,10 @@ import * as React from "react";
 import { Meta } from "@storybook/react";
 import DashboardLayoutUI from "./DashboardLayout";
 import { Col } from "../../core/Col";
-import { HomeIcon, CampaignIcon } from "../../../assets";
+import { HomeIcon, CampaignIcon, GadaIcon } from "../../../assets";
 import { iDashboardNavItems } from "./types";
 import { Link } from "@mui/material";
+import { Text } from "../../core";
 
 export default {
   title: "Components/Layout",
@@ -26,13 +27,15 @@ const DashboardNavigation: iDashboardNavItems[] = [
   },
 ];
 
-export const Dashboard: React.VFC = () => {
+export const DashboardLayout: React.VFC = () => {
   return (
     <DashboardLayoutUI
+      Logo={<GadaIcon />}
       navItems={DashboardNavigation}
       activePathname="/"
       dashboardBaseUrl="/"
       LinkComponent={Link}
+      header={<Text>Some Header</Text>}
     >
       <Col>Page Component</Col>
     </DashboardLayoutUI>
