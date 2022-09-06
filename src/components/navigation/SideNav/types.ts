@@ -7,6 +7,7 @@ export interface iSideNavProps {
   drawerProps?: iDrawerProps;
   navItemsProps: iNavListItemsProps;
   stickyBottomFooter?: React.ReactNode;
+  header?: React.ReactNode;
 }
 
 export interface iTopBottomNavItems {
