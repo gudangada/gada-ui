@@ -80,7 +80,7 @@ const Table: React.VFC<iTableProps<any>> = ({
   }, [emptyDataMessage, tableHeadingCells]);
 
   return (
-    <Col fullHeight>
+    <Col fullHeight className="overflow-hidden">
       <Col
         className={clsx(
           "overflow-auto flex-1 h-full justify-between",
