@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { ButtonPropsMap } from "./constants";
-import { iIconProps } from "../../../assets/icons/types";
+import { iIconProps } from "../../../../assets/icons/types";
 
 const Button: React.FC<iButtonProps> = ({
   children,
