@@ -11,6 +11,7 @@ const DashboardLayout: React.FC<iDashboardProps> = ({
   activePathname,
   dashboardBaseUrl,
   stickyBottomFooter,
+  header,
   children,
   contentContainerClassName,
 }) => {
@@ -45,6 +46,7 @@ const DashboardLayout: React.FC<iDashboardProps> = ({
         Logo={Logo}
         navItemsProps={{ navItems: sideNavItems, LinkComponent }}
         stickyBottomFooter={stickyBottomFooter}
+        header={header}
       />
       <main
         className={clsx(

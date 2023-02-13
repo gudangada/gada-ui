@@ -2,13 +2,17 @@ import * as React from "react";
 import { iSideNavProps, iTopBottomNavItems } from "./types";
 import { NavListItems, Col, Divider } from "../../core";
 import { Drawer } from "../../layout";
+import { useAppTheme } from "../../../hooks";
 
 const SideNav: React.VFC<iSideNavProps> = ({
   Logo,
   drawerProps,
   navItemsProps: { navItems, ...restNavProps },
   stickyBottomFooter,
+  header,
 }) => {
+  const { palette } = useAppTheme();
+
   const paperRef = React.useRef<HTMLDivElement>(null);
   const [_, setShowShadow] = React.useState(false);
 
@@ -52,11 +56,25 @@ const SideNav: React.VFC<iSideNavProps> = ({
     >
       <Col flex={1}>
         {Logo && (
-          <Col vCenter className="p-4">
-            {Logo}
-          </Col>
+          <>
+            <Col vCenter className="p-4">
+              {Logo}
+            </Col>
+            <Divider
+              color={palette.interface.black[400]}
+              className="opacity-30"
+            />
+            <Divider
+              color={palette.interface.black[400]}
+              className="opacity-30"
+            />
+            <Divider
+              color={palette.interface.black[400]}
+              className="opacity-30"
+            />
+          </>
         )}
-        <Divider />
+        {header}
         <Col flex={1} justifyContent="space-between">
           <NavListItems {...restNavProps} navItems={topNavItems} />
           <Col>

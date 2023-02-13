@@ -80,9 +80,12 @@ const Table: React.VFC<iTableProps<any>> = ({
   }, [emptyDataMessage, tableHeadingCells]);
 
   return (
-    <Col fullHeight className="overflow-auto">
+    <Col fullHeight className="overflow-hidden">
       <Col
-        className={clsx("flex-1 h-full justify-between", containerClassName)}
+        className={clsx(
+          "overflow-auto flex-1 h-full justify-between",
+          containerClassName
+        )}
       >
         <MuiTable
           {...tableProps}
@@ -174,16 +177,16 @@ const Table: React.VFC<iTableProps<any>> = ({
               : data.map(renderTableItem)}
           </TableBody>
         </MuiTable>
-        {withPagination && paginationProps ? (
-          <TableFooter stickyFooter={paginationProps.sticky}>
-            <TablePagination
-              page={paginationProps.page}
-              count={Math.ceil(paginationProps.total / paginationProps.perPage)}
-              onPageChange={paginationProps.onPageChange}
-            />
-          </TableFooter>
-        ) : null}
       </Col>
+      {withPagination && paginationProps ? (
+        <TableFooter stickyFooter={paginationProps.sticky}>
+          <TablePagination
+            page={paginationProps.page}
+            count={Math.ceil(paginationProps.total / paginationProps.perPage)}
+            onPageChange={paginationProps.onPageChange}
+          />
+        </TableFooter>
+      ) : null}
     </Col>
   );
 };
